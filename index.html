@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ЗЧВПРФ</title>
+        <link rel="stylesheet" href="./fonts/style.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="icon" href="./image/favicon.png" type="image/x-icon">
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+    </head>
+    <body>
+      <div class="left">
+        <div class="system">
+            <div class="system-info">
+                Техническая часть
+                <div class="system-info__hidden" onclick="hiddenSystem()">
+                    Скрыть
+                </div>
+            </div>
+            <div class="system-button">
+                <div class="system-button__tech" onclick="saveFile()">Сохранить</div>
+            </div>
+            <div class="system-file">
+                <label for="fileInput" class="system-file__button">Загрузить</label>
+                <input type="file" id="fileInput" class="system-file__input">
+                <div id="fileName" class="system-file__name"></div>
+            </div>
+        </div>
+        <div class="hot" data-collapsed="true">
+            <div class="hot-info">
+                Информация о горячих клавишах
+                <div class="hot-info__hidden" onclick="hiddenHot()">
+                    Показать
+                </div>
+            </div>
+            <div class="hot-description">CTRL+A: <span>Выбрать файл для импорта</span></div>
+            <div class="hot-description">CTRL+Z: <span>Сделать фото листа</span></div>
+            <div class="hot-description">CTRL+C: <span>Включить/выключить подсказки</span></div>
+            <div class="hot-description">CTRL+V: <span>Выключить горячие клавишы</span></div>
+            <div class="hot-description">CTRL+B: <span>Переключить лист персонажа</span></div>
+            <div class="hot-description">CTRL+Q: <span>Переключить лист персонажа</span></div>
+        </div>
+        <div class="spent" data-collapsed="true">
+            <div class="spent-info">
+                Информация о затраченном опыте
+                <div class="spent-info__hidden" onclick="hiddenSpent()">
+                    Показать
+                </div>
+            </div>
+            <div class="spent-data">
+                Затраченно опыта на общую прокачку навыков:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Ближний бой:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Дальний бой:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Акробатика:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Защита:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Магия:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Алхимия:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Выживание:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Красноречие:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Навыки вора:
+                <span>0</span>
+            </div>
+            <div>
+                ------------------
+                Характеристики
+                ------------------
+            </div>
+            <div class="spent-data">
+                Затраченно опыта на общую прокачку характеристик:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Сила:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Ловкость:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Интеллект:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Выносливость:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Харизма:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Мудрость:
+                <span>0</span>
+            </div>
+            <div class="spent-data">
+                Удача:
+                <span>0</span>
+            </div>
+        </div>
+      </div>
+      <div class="mid">
+        <div class="mid-info">
+            <div class="mid-info__item">
+                <label class="mid-info__item-title" for="name">
+                    Игрок:
+                </label>
+                <input class="mid-info__item-input" id="name">
+            </div>
+            <div class="mid-info__item">
+                <label class="mid-info__item-title" for="character">
+                    Персонаж:
+                </label>
+                <input class="mid-info__item-input" id="character">
+            </div>
+            <div class="mid-info__item">
+                <label class="mid-info__item-title" for="species">
+                    Раса:
+                </label>
+                <input class="mid-info__item-input" id="species">
+            </div>
+        </div>
+        <div class="special">
+            <label class="special-inspiration" for="inspiration">
+                Вдохновение
+                <input id="inspiration" class="number-only">
+            </label>
+            <div class="special-mana">
+                <div class="special-mana__container">
+                </div>
+                <div class="special-mana__button" onclick="deleteManaBonus()">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="special-mana__button" onclick="addManaBonus()">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"/>
+                        <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="special-mana__col">
+                    Количество маны
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="skills">
+            <label class="skills-item" for="melee">
+                <div class="skills-item__title">
+                    Ближний бой
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="melee"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="ranger">
+                <div class="skills-item__title">
+                    Дальний бой
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="ranger"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="acrobatics">
+                <div class="skills-item__title">
+                    Акробатика
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="acrobatics"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="defense">
+                <div class="skills-item__title">
+                    Защита
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="defense"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="magic">
+                <div class="skills-item__title">
+                    Магия
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="magic"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="alchemy">
+                <div class="skills-item__title">
+                    Алхимия
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="alchemy"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="medicine">
+                <div class="skills-item__title">
+                    Медицина
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="medicine"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>
+                </div>
+            </label>
+            <label class="skills-item" for="survival">
+                <div class="skills-item__title">
+                    Выживание
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="survival"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="speech">
+                <div class="skills-item__title">
+                    Красноречие
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="speech"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="skills-item" for="thief">
+                <div class="skills-item__title">
+                    Навыки вора
+                </div>
+                <div class="skills-item__square">
+                    <div class="skills-item__square-main one">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main two">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main tree">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main phour">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main five">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main six">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main seven">
+                        <div></div>
+                    </div>
+                    <div class="skills-item__square-main eight">
+                        <div></div>
+                    </div>
+                    <span>0</span>
+                </div>
+                <div class="skills-item__numbers">
+                    <div class="skills-item__numbers-left deactive">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <input class="skills-item__numbers-input number-only" id="thief"><span class="skills-item__numbers-divider"></span>
+                    <div class="skills-item__numbers-right">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>  
+                    </div>                   
+                </div>
+            </label>
+            <label class="features" for="features">
+                Особеннности
+                <textarea id="features"></textarea>
+                <div></div>
+            </label>
+        </div>
+        <div class="specifications-features">
+            <div class="specifications">
+                <label class="specifications-item" for="strength">
+                    <div class="specifications-item__title">Сила</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="strength"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+                <label class="specifications-item" for="dexterity">
+                    <div class="specifications-item__title">Ловкость</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="dexterity"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+                <label class="specifications-item" for="intelligence">
+                    <div class="specifications-item__title">Интеллект</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="intelligence"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+                <label class="specifications-item" for="endurance">
+                    <div class="specifications-item__title">Выносливость</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="endurance"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+                <label class="specifications-item" for="charisma">
+                    <div class="specifications-item__title">Харизма</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="charisma"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+                <label class="specifications-item" for="wisdom">
+                    <div class="specifications-item__title">Мудрость</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="wisdom"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+                <label class="specifications-item" for="luck">
+                    <div class="specifications-item__title">Удача</div>
+                    <div class="specifications-item__numbers">
+                        <div class="specifications-item__numbers-left deactive">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L5 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <input class="specifications-item__numbers-input number-only" id="luck"><span class="specifications-item__numbers-divider">/1</span>
+                        <div class="specifications-item__numbers-right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </div>                   
+                    </div>
+                    <div class="specifications-item__square">
+                        <div class="specifications-item__square-main one">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main two">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main tree">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main phour">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main five">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main six">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main seven">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main eight">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main nine">
+                            <div></div>
+                        </div>
+                        <div class="specifications-item__square-main ten">
+                            <div></div>
+                        </div>
+                        <span>1</span>
+                        <advantage></advantage>
+                    </div>
+                </label>
+            </div>
+            <label class="abilities" for="abilities">
+                Способности
+                <textarea id="abilities"></textarea>
+                <div></div>
+            </label>
+        </div>
+        <label class="beauty" for="beauty">
+            Место для информации о персонаже
+            <textarea id="beauty"></textarea>
+            <div></div>
+        </label>
+      </div>
+      <div class="mid-second">
+        <div class="mid-second__info">
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="nameSecond">
+                    Игрок:
+                </label>
+                <input class="second-info__item-input" id="nameSecond">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="characterSecond">
+                    Персонаж:
+                </label>
+                <input class="second-info__item-input" id="characterSecond">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="speciesSecond">
+                    Раса:
+                </label>
+                <input class="second-info__item-input" id="speciesSecond">
+            </div>
+        </div>
+        <div class="mid-second__info">
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="age">
+                    Возраст:
+                </label>
+                <input class="second-info__item-input" id="age">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="height">
+                    Рост:
+                </label>
+                <input class="second-info__item-input" id="height">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="weight">
+                    Вес:
+                </label>
+                <input class="second-info__item-input" id="weight">
+            </div>
+        </div>
+        <div class="mid-second__info">
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="eyes">
+                    Глаза:
+                </label>
+                <label for="eyesColor" class="second-info__item-color"></label>
+                <input type="color" id="eyesColor">
+                <input class="second-info__item-input" id="eyes">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="skin">
+                    Кожа:
+                </label>
+                <label for="skinColor" class="second-info__item-color"></label>
+                <input type="color" id="skinColor">
+                <input class="second-info__item-input" id="skin">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="hair">
+                    Волосы:
+                </label>
+                <label for="hairColor" class="second-info__item-color"></label>
+                <input type="color" id="hairColor">
+                <input class="second-info__item-input" id="hair">
+            </div>
+        </div>
+        <div class="mid-second__info two">
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="birth">
+                    Дата рождения:
+                </label>
+                <input class="second-info__item-input" id="birth">
+            </div>
+            <div class="mid-second__info-item">
+                <label class="second-info__item-title" for="parents">
+                    Родители:
+                </label>
+                <input class="second-info__item-input" id="parents">
+            </div>
+        </div>
+        <div class="mid-character">
+            <label class="mid-character__title" for="traits">Черты характера:</label>
+            <textarea class="mid-character__text" id="traits"></textarea>
+            <div></div>
+        </div>
+        <div class="mid-character">
+            <label class="mid-character__title" for="task">Цели:</label>
+            <textarea class="mid-character__text" id="task"></textarea>
+            <div></div>
+        </div>
+        <div class="mid-character">
+            <label class="mid-character__title" for="attachments">Привязанности:</label>
+            <textarea class="mid-character__text" id="attachments"></textarea>
+            <div></div>
+        </div>
+        <div class="mid-character">
+            <label class="mid-character__title" for="fear">Страхи:</label>
+            <textarea class="mid-character__text" id="fear"></textarea>
+            <div></div>
+        </div>
+        <div class="mid-character">
+            <label class="mid-character__title" for="characterSkills">Навыки:</label>
+            <textarea class="mid-character__text" id="characterSkills"></textarea>
+            <div></div>
+        </div>
+        <div class="mid-character background">
+            <label class="mid-character__title" for="background">Предыстория персонажа:</label>
+            <textarea class="mid-character__text" id="background"></textarea>
+            <div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-container">
+            <div class="right-container__button" onclick="takeshot()">
+                Фото листа
+            </div>
+            <div class="right-container__button" onclick="swapList()">
+                Сменить лист
+            </div>
+            <div class="right-container__button" onclick="takeHints(this)">
+                Включить подсказки
+            </div>
+            <div class="right-container__button" onclick="setHot(this)">
+                Включить горячие клавиши
+            </div>
+            <a class="right-container__button" target="_blank" href="https://docs.google.com/document/d/1Ur-MJR68Hkz6LVT2MbngMAd5cpLM8qZ3X0Lcof5BiF4/edit?tab=t.95zegmva1r54">
+                Ссылка на документацию
+            </a>
+        </div>
+      </div>
+    <footer>
+        <div class="footer-info">
+            Создано при помощи 2 банок бэрна и помощи ryoku5kane
+        </div>
+        <div class="footer-date">
+            @2025
+        </div>
+        <a href="/" class="footer-version">
+            Версия: 1.9
+        </a>
+    </footer>
+    </body>
+
+    <div id="output"></div>
+    <div class="modal"></div>
+    <div class="hints hiden"></div>
+    <script src="./js/main.js"></script>
+    <script src="./js/mana.js"></script>
+    <script src="./js/input.js"></script>
+    <script src="./js/skills.js"></script>
+    <script src="./js/specifications.js"></script>
+    <script src="./js/spent.js"></script>
+    <script src="./js/takeshot.js"></script>
+    <script src="./js/hints.js"></script>
+    <script src="./js/hot.js"></script>
+    <script src="./js/save.js"></script>
+    <script src="./js/character.js"></script>
+</html>
