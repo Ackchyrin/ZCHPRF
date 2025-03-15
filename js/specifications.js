@@ -58,6 +58,7 @@ document.querySelectorAll('.specifications-item').forEach(el=>{
     })
 })
 
+
 function countingspecifications(x){
     colTek = Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))
     colUp = Number(x.querySelector('.specifications-item__square span').innerText)+1

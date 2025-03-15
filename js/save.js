@@ -51,7 +51,6 @@ function saveFile(){
     dataCharacter['fear'] = document.querySelector('#fear').value
     dataCharacter['characterSkills'] = document.querySelector('#characterSkills').value
     dataCharacter['background'] = document.querySelector('#background').value
-    
     currentdate = new Date();
     day = currentdate.getDate();
     month = currentdate.getMonth() + 1;

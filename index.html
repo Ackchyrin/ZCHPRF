@@ -6,6 +6,14 @@
         <title>ЗЧВПРФ</title>
         <link rel="stylesheet" href="./fonts/style.css">
         <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/left.css">
+        <link rel="stylesheet" href="./css/mid.css">
+        <link rel="stylesheet" href="./css/midSecond.css">
+        <link rel="stylesheet" href="./css/midThird.css">
+        <link rel="stylesheet" href="./css/midFourth.css">
+        <link rel="stylesheet" href="./css/right.css">
+        <link rel="stylesheet" href="./css/footerUtils.css">
         <link rel="icon" href="./image/favicon.png" type="image/x-icon">
         <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     </head>
@@ -39,7 +47,7 @@
             <div class="hot-description">CTRL+C: <span>Включить/выключить подсказки</span></div>
             <div class="hot-description">CTRL+V: <span>Выключить горячие клавишы</span></div>
             <div class="hot-description">CTRL+B: <span>Переключить лист персонажа</span></div>
-            <div class="hot-description">CTRL+Q: <span>Переключить лист персонажа</span></div>
+            <div class="hot-description">CTRL+Q: <span>Сохранить персонажа</span></div>
         </div>
         <div class="spent" data-collapsed="true">
             <div class="spent-info">
@@ -1107,13 +1115,41 @@
             <div></div>
         </div>
       </div>
+      <div class="mid-third">
+        <div class="mid-third__mana">
+        </div>
+        <div class="mid-third__information">
+            <div>
+                Количество маны
+                <span></span>
+            </div>
+            <div>
+                Заклинаний
+                <span></span>
+            </div>
+            <div>
+                Скорость восстаноавления маны
+                <input class="number-only">
+            </div>
+        </div>
+      </div>
+      <div class="mid-fourth"></div>
       <div class="right">
         <div class="right-container">
             <div class="right-container__button" onclick="takeshot()">
                 Фото листа
             </div>
-            <div class="right-container__button" onclick="swapList()">
-                Сменить лист
+            <div class="right-container__button deactive" onclick="openListMain(this)">
+                Статы персонажа
+            </div>
+            <div class="right-container__button" onclick="openListCharacter(this)">
+                Качества персонажа
+            </div>
+            <div class="right-container__button" onclick="openListMagic(this)">
+                Заклинания персонажа
+            </div>
+            <div class="right-container__button" onclick="openListInventory(this)">
+                Инвентарь персонажа
             </div>
             <div class="right-container__button" onclick="takeHints(this)">
                 Включить подсказки
@@ -1124,21 +1160,27 @@
             <a class="right-container__button" target="_blank" href="https://docs.google.com/document/d/1Ur-MJR68Hkz6LVT2MbngMAd5cpLM8qZ3X0Lcof5BiF4/edit?tab=t.95zegmva1r54">
                 Ссылка на документацию
             </a>
+            <div class="right-container__button deactive" onclick="addSpell()">
+                Добавить заклинание
+            </div>
         </div>
       </div>
     <footer>
         <div class="footer-info">
-            Создано при помощи 2 банок бэрна и помощи ryoku5kane
+            Создано при помощи 4 банок бэрна
+            <br>
+            Благодарность за написание документации ryoku5kane
+            <br>
+            Отдельная благодарность _mamamakusa за помощь с листом заклинаний
         </div>
         <div class="footer-date">
             @2025
         </div>
-        <a href="/" class="footer-version">
-            GIT Версия: 1.9
+        <a href="https://github.com/Ackchyrin/ZCHPRF" target="_blank" class="footer-version">
+            GIT Версия: 1.9 SPELL
         </a>
     </footer>
     </body>
-
     <div id="output"></div>
     <div class="modal"></div>
     <div class="hints hiden"></div>
@@ -1153,4 +1195,6 @@
     <script src="./js/hot.js"></script>
     <script src="./js/save.js"></script>
     <script src="./js/character.js"></script>
+    <script src="./js/autoRace.js"></script>
+    <script src="./js/listMagic.js"></script>
 </html>

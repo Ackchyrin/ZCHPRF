@@ -1,0 +1,132 @@
+.mid-second{
+    background-color: white;
+    transform: scaleX(0);
+    transition:transform .4s;
+    max-width: 1280px;
+    border-radius: 10px;
+    width: 0;
+    height: fit-content;
+    flex: 0;
+}
+
+.mid-second div,
+.mid-second span,
+.mid-second input{
+    opacity: 0;
+}
+
+.mid-second.active{
+    transform: scaleX(1);
+    width: 100%;
+    border: 1px solid;
+    padding: 15px 15px 25px;
+    flex: 1;
+}
+
+.mid-second.active div,
+.mid-second.active span,
+.mid-second.active input{
+    opacity: 1;
+}
+
+.mid-second__info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.mid-second__info-item{
+    display: flex;
+    gap: 5px;
+    width: 31%;
+    align-items: center;
+    position: relative;
+}
+
+.second-info__item-title{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.second-info__item-input{
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    border-bottom: 1px solid;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Segoe Script';
+}
+
+.second-info__item-input.hidden{
+    border: none;
+}
+
+.mid-second__info-item input[type="color"]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: none;
+    bottom: 0;
+}
+
+.mid-second__info.two .mid-second__info-item{
+    width: fit-content;
+}
+
+.mid-second__info.two .mid-second__info-item:nth-child(2){
+    width: 100%;
+}
+
+.second-info__item-title[for="birth"]{
+    width: 136px;
+}
+
+#birth{
+    width: 50%;
+}
+
+.mid-character{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 170px;
+}
+
+.mid-character.background{
+    height: 300px;
+}
+
+.mid-character__title{
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mid-character__text{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid;
+    outline: none;
+    padding: 5px;
+    font-family: 'Segoe Script';
+    font-size: 18px;
+}
+
+.mid-character div{
+    display: none;
+    white-space: pre-wrap;
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 5px;
+    height: 100%;
+}
+
+.second-info__item-color{
+    width: 42px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 100px;
+}

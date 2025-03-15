@@ -1,0 +1,39 @@
+.right{
+    max-width: 190px;
+    width: 100%;
+    flex: 1;
+}
+
+.right-container{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 10px;
+    gap: 10px;
+}
+
+.right-container__button{
+    width: 100%;
+    border: 1px solid;
+    background-color: white;
+    cursor: pointer;
+    transition: .4s;
+    padding: 20px 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.right-container__button:hover{
+    background-color: #2f2f2f;
+    color: white;
+}
+
+a.right-container__button{
+    text-decoration: none;
+    color: black;
+}
+
+.right-container__button.deactive{
+    display: none;
+}
+
