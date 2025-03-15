@@ -36,19 +36,25 @@ function calculateSpent(){
                 colSingl = inputValue
             } 
         }
-        Object.entries(dataRace).forEach(([key, val]) => {
-            if(el.querySelector('.specifications-item__numbers-input').id != key){                
-                if(val == 0){
-                    colRace = 0                    
-                }else{
-                    colRace = val
-                }
-            }
-        })
-        if(el.querySelector('.specifications-item__numbers-input').id == 'luck'){
-            colRace = 0
+        if(el.querySelector('.specifications-item__numbers-input').id == 'strength'){
+            colRace = dataRace['strength']
         }
-        if(el.querySelector('.specifications-item__numbers-input').id == 'wisdom' && dataRace['wisdom'] == 0){
+        if(el.querySelector('.specifications-item__numbers-input').id == 'dexterity'){
+            colRace = dataRace['dexterity']
+        }
+        if(el.querySelector('.specifications-item__numbers-input').id == 'intelligence'){
+            colRace = dataRace['intelligence']
+        }
+        if(el.querySelector('.specifications-item__numbers-input').id == 'endurance'){
+            colRace = dataRace['endurance']
+        }
+        if(el.querySelector('.specifications-item__numbers-input').id == 'charisma'){
+            colRace = dataRace['charisma']
+        }
+        if(el.querySelector('.specifications-item__numbers-input').id == 'wisdom'){
+            colRace = dataRace['wisdom']
+        }
+        if(el.querySelector('.specifications-item__numbers-input').id == 'luck'){
             colRace = 0
         }
         document.querySelectorAll('.spent-data span')[index+11].innerText = colSingl-1-colRace
@@ -56,3 +62,4 @@ function calculateSpent(){
     document.querySelectorAll('.spent-data span')[10].innerText = colCommon-6-globalCommonSpecifications
     setMana()
 }
+hiddenSpent()

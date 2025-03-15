@@ -15,7 +15,7 @@ function autoRace(){
         }
     }
     
-    if(document.querySelector('#species').value.toLowerCase() == 'гномы'){
+    if(document.querySelector('#species').value.toLowerCase() == 'гном'){
         dataRace = {
             "strength": 9,
             "dexterity": 2,
@@ -26,7 +26,7 @@ function autoRace(){
         }
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'эльфы'){
+    if(document.querySelector('#species').value.toLowerCase() == 'эльф'){
         dataRace = {
             "strength": 2,
             "dexterity": 9,
@@ -37,7 +37,7 @@ function autoRace(){
         }
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'полурослики'){
+    if(document.querySelector('#species').value.toLowerCase() == 'полурослик'){
         dataRace = {
             "strength": 0,
             "dexterity": 9,
@@ -48,7 +48,7 @@ function autoRace(){
         }
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'полуэльфы'){
+    if(document.querySelector('#species').value.toLowerCase() == 'полуэльф'){
         dataRace = {
             "strength": 5,
             "dexterity": 5,
@@ -70,12 +70,26 @@ function autoRace(){
         }
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'полуорки'){
-
+    if(document.querySelector('#species').value.toLowerCase() == 'полуорк'){
+        dataRace = {
+            "strength": 7,
+            "dexterity": 5,
+            "intelligence": 5,
+            "endurance": 7,
+            "charisma": 5,
+            "wisdom": 5
+        }
     }
 
     if(document.querySelector('#species').value.toLowerCase() == 'котолюди'){
-
+        dataRace = {
+            "strength": 2,
+            "dexterity": 9,
+            "intelligence": 5,
+            "endurance": 9,
+            "charisma": 5,
+            "wisdom": 5
+        }
     }
     
     autoRaceSpecigication()
@@ -87,19 +101,19 @@ function autoRaceCommon(){
         globalCommonSpecifications = 30
     }
     
-    if(document.querySelector('#species').value.toLowerCase() == 'гномы'){
+    if(document.querySelector('#species').value.toLowerCase() == 'гном'){
         globalCommonSpecifications = 32
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'эльфы'){
+    if(document.querySelector('#species').value.toLowerCase() == 'эльф'){
         globalCommonSpecifications = 32
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'полурослики'){
+    if(document.querySelector('#species').value.toLowerCase() == 'полурослик'){
         globalCommonSpecifications = 26
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'полуэльфы'){
+    if(document.querySelector('#species').value.toLowerCase() == 'полуэльф'){
         globalCommonSpecifications = 38
     }
 
@@ -107,16 +121,15 @@ function autoRaceCommon(){
         globalCommonSpecifications = 28
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'полуорки'){
-
+    if(document.querySelector('#species').value.toLowerCase() == 'полуорк'){
+        globalCommonSpecifications = 34
     }
 
     if(document.querySelector('#species').value.toLowerCase() == 'котолюди'){
-        
+        globalCommonSpecifications = 35
     }
 
 }
-
 
 function autoRaceSpecigication(){
     specificationsTime = 0
