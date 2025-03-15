@@ -107,7 +107,7 @@ function addSpell(){
                 <label class="spell-long__description">
                     Описание
                     <textarea></textarea>
-                    <span></span>
+                    <div></div>
                 </label>
                 <div class="spell-long__delete">
                     Удалить

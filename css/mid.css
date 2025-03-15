@@ -333,6 +333,8 @@
     border: 1px solid;
     padding: 5px;
     height: 100%;
+    font-family: 'Segoe Script';
+    font-size: 18px;
 }
 
 .specifications-features{
@@ -526,6 +528,8 @@
     border: 1px solid;
     padding: 5px;
     height: 100%;
+    font-family: 'Segoe Script';
+    font-size: 18px;
 }
 
 .beauty{
@@ -559,4 +563,6 @@
     border: 1px solid;
     padding: 5px;
     height: 100%;
+    font-family: 'Segoe Script';
+    font-size: 18px;
 }

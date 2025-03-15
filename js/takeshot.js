@@ -25,12 +25,20 @@ function takeshot(){
         el.querySelector('.mid-character__text').style.display = 'none'
         el.querySelector('div').innerHTML = el.querySelector('.mid-character__text').value
     })
+    document.querySelectorAll('.spell-long__description').forEach(el=>{
+        el.querySelector('textarea').style.display = 'none'
+        el.querySelector('div').style.display = 'block'
+        el.querySelector('div').innerHTML = el.querySelector('textarea').value
+    })
     div = ''
-    if(document.querySelector('.mid-second').classList.contains('active')){
-        div = document.querySelector('.mid-second');
-
-    }else{
-        div = document.querySelector('.mid');
+    if(!document.querySelector('.mid').classList.contains('deactive')){
+        div = document.querySelector('.mid')
+    }else if(document.querySelector('.mid-second').classList.contains('active')){
+        div = document.querySelector('.mid-second')
+    }else if(document.querySelector('.mid-third').classList.contains('active')){
+        div = document.querySelector('.mid-third')
+    }else if(document.querySelector('.mid-fourth').classList.contains('active')){
+        div = document.querySelector('.mid-fourth')
     }
     html2canvas(div).then(
         function (canvas) {
@@ -83,6 +91,11 @@ function download(canvas, filename) {
     document.querySelectorAll('.mid-character').forEach(el=>{
         el.querySelector('div').style.display = 'none'
         el.querySelector('.mid-character__text').style.display = 'block'
+    })
+    document.querySelectorAll('.spell-long__description').forEach(el=>{
+        el.querySelector('textarea').style.display = 'block'
+        el.querySelector('div').style.display = 'none'
+        el.querySelector('div').innerHTML = ''
     })
     setTimeout(() => {
         document.querySelector('.modal').classList.remove('active')

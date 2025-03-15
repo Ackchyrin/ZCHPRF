@@ -105,9 +105,6 @@ function openListMagic(x){
     document.querySelector('.mid-fourth').classList.remove('active')
     document.querySelectorAll('.right-container__button')[8].classList.remove('deactive')
     setManaMagic()
-    // setTimeout(() => {
-    //     setManaMagic()
-    // }, 1000);
 }
 
 function openListInventory(x){
@@ -123,5 +120,3 @@ function openListInventory(x){
 function openButtonRight(){
     document.querySelectorAll('.right-container__button.deactive').forEach(el=>el.classList.remove('deactive'))
 }
-
-// document.querySelectorAll('.right-container__button')[3].click()

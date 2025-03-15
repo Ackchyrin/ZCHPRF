@@ -122,6 +122,8 @@
     border: 1px solid;
     padding: 5px;
     height: 100%;
+    font-family: 'Segoe Script';
+    font-size: 18px;
 }
 
 .second-info__item-color{

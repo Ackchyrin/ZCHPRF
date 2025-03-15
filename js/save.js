@@ -1,6 +1,7 @@
 let dataCharacter = {}
 dataCharacter['skills'] = {}
 dataCharacter['specifications'] = {}
+dataCharacter['spell'] = {}
 document.getElementById('fileInput').addEventListener('change', loadFile)
 
 function saveFile(){
@@ -25,6 +26,28 @@ function saveFile(){
             colSingl = inputValue
         }
         dataCharacter['specifications'][el.querySelector('.specifications-item__numbers-input').id] = colSingl-1
+    })
+    document.querySelectorAll('.mid-third__spell').forEach((el,index)=>{
+        dataCharacter['spell'][index] = {}
+        dataCharacter['spell'][index]['name'] = el.querySelector('.spell-long__title input').value
+        dataCharacter['spell'][index]['school'] = el.querySelector('select').value
+        dataCharacter['spell'][index]['schoolManual'] = el.querySelector('.spell-long__school input').value
+        dataCharacter['spell'][index]['minMana'] = el.querySelector('.spell-long__cost input').value
+        dataCharacter['spell'][index]['maxMana'] = el.querySelectorAll('.spell-long__cost input')[1].value
+        dataCharacter['spell'][index]['time'] = el.querySelector('.spell-long__time input').value
+        dataCharacter['spell'][index]['duration'] = el.querySelector('.spell-long__duration input').value
+        dataCharacter['spell'][index]['range'] = el.querySelector('.spell-long__range input').value
+        dataCharacter['spell'][index]['description'] = el.querySelector('.spell-long__description textarea').value
+        if(el.querySelector('.spell-system__favourites').classList.contains('active')){
+            dataCharacter['spell'][index]['favourites'] = true
+        }else{
+            dataCharacter['spell'][index]['favourites'] = false
+        }
+        if(!el.querySelector('.spell-system__change').classList.contains('active')){
+            dataCharacter['spell'][index]['open'] = true
+        }else{
+            dataCharacter['spell'][index]['open'] = false
+        }
     })
     dataCharacter['name'] = document.querySelector('#name').value
     dataCharacter['character'] = document.querySelector('#character').value
@@ -51,6 +74,7 @@ function saveFile(){
     dataCharacter['fear'] = document.querySelector('#fear').value
     dataCharacter['characterSkills'] = document.querySelector('#characterSkills').value
     dataCharacter['background'] = document.querySelector('#background').value
+    dataCharacter['replenishment'] = document.querySelector('#replenishment').value
     currentdate = new Date();
     day = currentdate.getDate();
     month = currentdate.getMonth() + 1;
@@ -119,13 +143,13 @@ function loadFile(){
             {selector: "#nameSecond", data: jsonData['name']},
             {selector: "#characterSecond", data: jsonData['character']},
             {selector: "#speciesSecond", data: jsonData['species']},
+            {selector: "#replenishment", data: jsonData['replenishment']},
         ]
         fields.forEach(field => {
             let i = 0
             const input = document.querySelector(field.selector)
             input.value = ''
             const text = field.data
-        
             function typeWriter(){
                 if(textTime < text.length*50){
                     textTime = text.length*50
@@ -181,7 +205,7 @@ function loadFile(){
         document.querySelectorAll('.specifications-item__square-main div').forEach(el=>el.style.width = 100+"%")
         document.querySelectorAll('.specifications-item__square-main.one div').forEach(el=>el.style.width = 0)
         document.querySelectorAll('.specifications-item__numbers-left').forEach(el=>el.classList.add('deactive'))
-        Object.entries(jsonData['specifications']).forEach(([key, val]) => {
+        Object.entries(jsonData['specifications']).forEach(([key, val]) =>{
             document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-left').classList.remove('deactive')
             for(let index = 0; index < val; index++){
                 setTimeout(() =>{
@@ -213,13 +237,109 @@ function loadFile(){
                 }
             }
         })
+
         for(let index = 0; index < jsonData['mana']; index++){
             setTimeout(() => {
                 document.querySelector('.special-mana__container-bonus').innerHTML += '<svg class="active" onclick="manaPaint(this)" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="12.5,1 24,9 19,23 6,23 1,9" stroke="black" stroke-width="2" fill="none"/></svg>'
                 colMana()
             }, index*50)
         }
+        Object.entries(jsonData['spell']).forEach(([key, val]) =>{
+            document.querySelector('.mid-third').innerHTML +=  `
+                <div class="mid-third__spell">
+                    <div class="mid-third__spell-short">
+                        <div class="spell-short__title">`+val.name+`</div>
+                        <div class="spell-short__cost">`+val.minMana+`</div>
+                        <div class="spell-short__range">`+val.range+`</div>
+                        <div class="spell-short__time">`+val.time+`</div>
+                        <div class="spell-short__duration">`+val.duration+`</div>
+                    </div>
+                    <div class="mid-third__spell-long">
+                        <label class="spell-long__title">
+                            Название
+                            <input value="`+val.name+`">
+                        </label>
+                        <label class="spell-long__school">
+                            Школа заклинания
+                            <input value="`+val.schoolManual+`">
+                            <select>
+                                <option>Восстановления</option>
+                                <option>Иллюзии</option>
+                                <option>Изменения</option>
+                                <option>Колдовства</option>
+                                <option>Разрушения</option>
+                                <option>Собственная</option>
+                            </select>
+                        </label>
+                        <label class="spell-long__cost">
+                            Стоимость
+                            <input class="short" placeholder="Мин" class="number-only" value="`+val.minMana+`">
+                            <input class="short" placeholder="Макс" class="number-only" value="`+val.maxMana+`">
+                        </label>
+                        <label class="spell-long__time">
+                            Время накладывания
+                            <input placeholder="" value="`+val.time+`">
+                        </label>
+                        <label class="spell-long__duration">
+                            Длительность
+                            <input placeholder="" value="`+val.duration+`">
+                        </label>
+                        <label class="spell-long__range">
+                            Дистанция
+                            <input placeholder="" value="`+val.range+`">
+                        </label>
+                        <label class="spell-long__description">
+                            Описание
+                            <textarea>`+val.description+`</textarea>
+                            <div></div>
+                        </label>
+                        <div class="spell-long__delete">
+                            Удалить
+                            <div class="long-delete__progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="spell-system">
+                        <div class="spell-system__favourites">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="spell-system__change">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 16 12 8 20 16"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            `
+            let elements = document.querySelectorAll('.mid-third__spell')
+            elements.forEach(element =>{
+                addFavourites(element)
+                addChange(element)
+                addOption(element)
+                deleteSpell(element)
+            });
+            elem = document.querySelectorAll('.mid-third__spell')[document.querySelectorAll('.mid-third__spell').length - 1]
+            if(val.open){
+                addChangeSave(elem)
+            }
+            if(val.favourites){
+                addFavouritesSave(elem)
+            }
+            elem.querySelectorAll('option').forEach(option =>{
+                option.removeAttribute('selected')
+                if(option.textContent.trim() === val.school.trim()){
+                    option.setAttribute('selected', 'selected')
+                }
+                if(val.school == 'Собственная'){
+                    elem.querySelector('.spell-long__school input').style.display = 'inline'
+                }
+            })
+            document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length
+        })
     }
+
+
     setTimeout(() =>{
         if(textTime > 2000 || textTime > 2000 || specificationsTime > 2000){
             setInterval(() =>{
@@ -243,4 +363,51 @@ function loadFile(){
     }, 2000)
     reader.readAsText(file)
     document.getElementById('fileInput').value = ''
+}
+
+function addFavouritesSave(x){
+    x.querySelector('.spell-system__favourites').classList.toggle('active')
+    if(x.querySelector('.spell-system__favourites').classList.contains('active')){
+        x.style.order = 1
+    }else{
+        x.style.order = 2
+    }
+}
+
+
+function addChangeSave(x){
+    x.querySelector('.spell-system__change').classList.toggle('active')
+    let heightShort
+    let isCollapsed = x.dataset.collapsed === "true"
+    if(!isCollapsed){
+        x.querySelector('.mid-third__spell-short').style.minHeight = '28px'
+        x.querySelector('.mid-third__spell-long').style.marginTop = '10px'
+        x.querySelector('.mid-third__spell-short').style.height = 'fit-content'
+    }else{
+        x.querySelector('.mid-third__spell-short').style.minHeight = '0'
+        x.querySelector('.mid-third__spell-short').style.height = '0'
+        x.querySelector('.mid-third__spell-long').style.marginTop = '0' 
+    }
+    if(x.querySelector('.mid-third__spell-short').clientHeight == 0){
+        heightShort = 48
+    }else{
+        heightShort = x.querySelector('.mid-third__spell-short').clientHeight + 20
+    }
+    let startHeight = isCollapsed ? heightShort : x.scrollHeight
+    let endHeight = isCollapsed ? x.scrollHeight : heightShort
+    let startTime
+
+    function animate(timestamp){
+        if(!startTime) startTime = timestamp
+        let progress = (timestamp - startTime) / 400
+        if(progress > 1) progress = 1
+        x.style.height = startHeight + (endHeight - startHeight) * progress + "px"
+        if(progress < 1){
+            requestAnimationFrame(animate)
+        }else{
+            x.dataset.collapsed = !isCollapsed
+        }
+    }
+    requestAnimationFrame(animate)
+    addDescription(x)
 }

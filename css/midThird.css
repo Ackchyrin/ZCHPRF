@@ -152,6 +152,17 @@
     height: 200px;
 }
 
+.spell-long__description div{
+    display: none;
+    white-space: pre-wrap;
+    border-radius: 10px;
+    border: 1px solid;
+    padding: 5px;
+    height: 100%;
+    font-family: 'Segoe Script';
+    font-size: 18px;
+}
+
 .spell-long__delete{
     cursor: pointer;
     transition: .4s;

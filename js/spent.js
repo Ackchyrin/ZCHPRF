@@ -62,4 +62,3 @@ function calculateSpent(){
     document.querySelectorAll('.spent-data span')[10].innerText = colCommon-6-globalCommonSpecifications
     setMana()
 }
-hiddenSpent()
