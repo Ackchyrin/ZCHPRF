@@ -242,9 +242,10 @@ function loadFile(){
             setTimeout(() => {
                 document.querySelector('.special-mana__container-bonus').innerHTML += '<svg class="active" onclick="manaPaint(this)" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="12.5,1 24,9 19,23 6,23 1,9" stroke="black" stroke-width="2" fill="none"/></svg>'
                 colMana()
+                setManaMagic()
             }, index*50)
         }
-        Object.entries(jsonData['spell']).forEach(([key, val]) =>{
+        Object.entries(jsonData['spell']).forEach((val) =>{
             document.querySelector('.mid-third').innerHTML +=  `
                 <div class="mid-third__spell">
                     <div class="mid-third__spell-short">
@@ -338,7 +339,6 @@ function loadFile(){
             document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length
         })
     }
-
 
     setTimeout(() =>{
         if(textTime > 2000 || textTime > 2000 || specificationsTime > 2000){
