@@ -27,27 +27,27 @@ document.querySelectorAll('.specifications-item').forEach(el=>{
             for (let index = 1; index <= (colEntry-colInput); index++) {
                 setTimeout(() => {
                     if(Number(el.querySelector('.specifications-item__numbers-input').value) + 1 != 11){
-                    el.querySelector('.specifications-item__numbers-left').classList.remove('deactive')
-                    el.querySelector('.specifications-item__numbers-input').value = Number(el.querySelector('.specifications-item__numbers-input').value) + 1
-                    if(Number(el.querySelector('.specifications-item__numbers-input').value) > Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))){
-                        el.querySelector('.specifications-item__numbers-divider').innerText = '/'+ (Number(el.querySelector('.specifications-item__square span').innerText)+1)
-                        el.querySelector('.specifications-item__numbers-input').value = 1                        
-                    }
-                    if(Number(el.querySelector('.specifications-item__numbers-input').value) == Number(el.querySelector('.specifications-item__square span').innerText)+1){                        
-                        el.querySelector('.specifications-item__square span').innerText = Number(el.querySelector('.specifications-item__square span').innerText)+1
-                    }
-                    el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(el.querySelector('.specifications-item__numbers-input').value)/Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"    
-                    if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
-                        el.querySelector('.specifications-item__square span').style.color = 'rgba(100, 40, 160, 1)'
-                    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
-                        el.querySelector('.specifications-item__square span').style.color = 'rgba(120, 160, 210, 1)'
-                    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
-                        el.querySelector('.specifications-item__square span').style.color = 'rgba(50, 220, 190, 1)'
-                    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
-                        el.querySelector('.specifications-item__square span').style.color = 'rgba(30, 180, 120, 1)'
-                    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
-                        el.querySelector('.specifications-item__square span').style.color = 'rgba(40, 30, 100, 1)'
-                    }
+                        el.querySelector('.specifications-item__numbers-left').classList.remove('deactive')
+                        el.querySelector('.specifications-item__numbers-input').value = Number(el.querySelector('.specifications-item__numbers-input').value) + 1
+                        if(Number(el.querySelector('.specifications-item__numbers-input').value) > Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))){
+                            el.querySelector('.specifications-item__numbers-divider').innerText = '/'+ (Number(el.querySelector('.specifications-item__square span').innerText)+1)
+                            el.querySelector('.specifications-item__numbers-input').value = 1                        
+                        }
+                        if(Number(el.querySelector('.specifications-item__numbers-input').value) == Number(el.querySelector('.specifications-item__square span').innerText)+1){                        
+                            el.querySelector('.specifications-item__square span').innerText = Number(el.querySelector('.specifications-item__square span').innerText)+1
+                        }
+                        el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(el.querySelector('.specifications-item__numbers-input').value)/Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"    
+                        if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
+                            el.querySelector('.specifications-item__square span').style.color = 'rgba(100, 40, 160, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
+                            el.querySelector('.specifications-item__square span').style.color = 'rgba(120, 160, 210, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+                            el.querySelector('.specifications-item__square span').style.color = 'rgba(50, 220, 190, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+                            el.querySelector('.specifications-item__square span').style.color = 'rgba(30, 180, 120, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+                            el.querySelector('.specifications-item__square span').style.color = 'rgba(40, 30, 100, 1)'
+                        }
                     }
                     setMana()
                     setAdvantage()

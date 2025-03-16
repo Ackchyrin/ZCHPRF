@@ -61,7 +61,7 @@ function colManaMagic(){
 }
 
 function addSpell(){
-    document.querySelector('.mid-third').innerHTML +=  `
+    document.querySelector('.mid-third').insertAdjacentHTML('beforeend',`
         <div class="mid-third__spell">
             <div class="mid-third__spell-short">
                 <div class="spell-short__title"></div>
@@ -128,13 +128,12 @@ function addSpell(){
             </div>
         </div>
     `
-    let elements = document.querySelectorAll('.mid-third__spell')
-    elements.forEach(element =>{
-        addFavourites(element)
-        addChange(element)
-        addOption(element)
-        deleteSpell(element)
-    });
+    )
+    let element = document.querySelectorAll('.mid-third__spell')[document.querySelectorAll('.mid-third__spell').length - 1]
+    addFavourites(element)
+    addChange(element)
+    addOption(element)
+    deleteSpell(element)
     document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length
 }
 

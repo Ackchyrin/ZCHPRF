@@ -246,7 +246,7 @@ function loadFile(){
             }, index*50)
         }
         Object.entries(jsonData['spell']).forEach((val) =>{
-            document.querySelector('.mid-third').innerHTML +=  `
+            document.querySelector('.mid-third').insertAdjacentHTML('beforeend',`
                 <div class="mid-third__spell">
                     <div class="mid-third__spell-short">
                         <div class="spell-short__title">`+val.name+`</div>
@@ -312,28 +312,25 @@ function loadFile(){
                         </div>
                     </div>
                 </div>
-            ` 
-            let elements = document.querySelectorAll('.mid-third__spell')
-            elements.forEach(element =>{
+            `)
+            let element = document.querySelectorAll('.mid-third__spell')[document.querySelectorAll('.mid-third__spell').length - 1]
                 addFavourites(element)
                 addChange(element)
                 addOption(element)
                 deleteSpell(element)
-            });
-            elem = document.querySelectorAll('.mid-third__spell')[document.querySelectorAll('.mid-third__spell').length - 1]
             if(val.open){
-                addChangeSave(elem)
+                addChangeSave(element)
             }
             if(val.favourites){
-                addFavouritesSave(elem)
+                addFavouritesSave(element)
             }
-            elem.querySelectorAll('option').forEach(option =>{
+            element.querySelectorAll('option').forEach(option =>{
                 option.removeAttribute('selected')
                 if(option.textContent.trim() === val.school.trim()){
                     option.setAttribute('selected', 'selected')
                 }
                 if(val.school == 'Собственная'){
-                    elem.querySelector('.spell-long__school input').style.display = 'inline'
+                    element.querySelector('.spell-long__school input').style.display = 'inline'
                 }
             })
             document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length

@@ -6,8 +6,8 @@ document.querySelector('#inspiration').addEventListener('input',()=>{
     }
 })
 
-document.querySelectorAll('.number-only').forEach(input => {
-    input.addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9]/g, '');
-    });
-});
+document.querySelectorAll('.number-only').forEach(input =>{
+    input.addEventListener('input', function(){
+        this.value = this.value.replace(/[^0-9]/g, '')
+    })
+})

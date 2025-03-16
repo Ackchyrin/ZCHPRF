@@ -11,9 +11,14 @@ function calculateSpent(){
             colCommon += inputValue
             colSingl = inputValue
         }
-        document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl
+        skillInventory = 0
+        if(nameSkillInventory == document.querySelectorAll('.spent-data')[index+1].innerText.replace(/: 0$/, '')){
+            document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl - colSkillInventory
+        }else{
+            document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl - skillInventory
+        }
     })
-    document.querySelector('.spent-data span').innerText = colCommon
+    document.querySelector('.spent-data span').innerText = colCommon - colSkillInventory
     autoRaceCommon()
     colCommon = 0
     colRace = 0
@@ -55,6 +60,9 @@ function calculateSpent(){
             colRace = dataRace['wisdom']
         }
         if(el.querySelector('.specifications-item__numbers-input').id == 'luck'){
+            colRace = 0
+        }
+        if(colRace == undefined){
             colRace = 0
         }
         document.querySelectorAll('.spent-data span')[index+11].innerText = colSingl-1-colRace

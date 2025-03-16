@@ -10,12 +10,12 @@ function deleteMana(){
 }
 
 function colMana(){
-    i = 0;
+    i = 0
     document.querySelectorAll('.special-mana__container svg').forEach(element => {
         if(element.classList.contains('active')){
-            i++;
+            i++
         }
-    });
+    })    
     document.querySelector('.special-mana__col span').innerText =  i+'/'+document.querySelectorAll('.special-mana__container svg').length
 }
 
@@ -23,22 +23,18 @@ function manaPaint(element){
     const svgs = document.querySelectorAll('.special-mana__container svg')
     let paint = true
     let lastActive = null
-
     svgs.forEach(svg =>{
         if (svg.classList.contains('active')){
             lastActive = svg
         }
     })
-
     let isLastActive = (element === lastActive)
     let isFirst = (element === svgs[0])
-
     if(isFirst && !svgs[1]?.classList.contains('active')){
         element.classList.toggle('active')
         colMana()
         return
     }
-
     svgs.forEach(svg =>{
         if(paint){
             svg.classList.add('active')
@@ -49,11 +45,9 @@ function manaPaint(element){
             paint = false
         }
     })
-
     if(isLastActive){
         element.classList.remove('active')
     }
-
     colMana()
 }
 

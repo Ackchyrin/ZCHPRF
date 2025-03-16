@@ -265,6 +265,7 @@
     align-items: center;
     justify-content: center;
     transition: .4s;
+    width: 26px;
 }
 
 .skills-item__numbers-right.deactive,

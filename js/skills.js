@@ -24,7 +24,7 @@ document.querySelectorAll('.skills-item').forEach(el=>{
         colEntry = Number(el.querySelector('.skills-item__numbers-input').value)
         if(colEntry > colInput){
             el.querySelector('.skills-item__numbers-input').value = colInput
-            for (let index = 1; index <= (colEntry-colInput); index++) {
+            for (let index = 1; index <= (colEntry-colInput); index++){
                 setTimeout(() => {
                     if(Number(el.querySelector('.skills-item__numbers-input').value) + 1 != 9){  
                         el.querySelector('.skills-item__numbers-left').classList.remove('deactive')
