@@ -120,4 +120,3 @@ function openListInventory(x){
 function openButtonRight(){
     document.querySelectorAll('.right-container__button.deactive').forEach(el=>el.classList.remove('deactive'))
 }
-document.querySelectorAll('.right-container__button')[4].click()
