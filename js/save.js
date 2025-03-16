@@ -312,7 +312,7 @@ function loadFile(){
                         </div>
                     </div>
                 </div>
-            `
+            ` 
             let elements = document.querySelectorAll('.mid-third__spell')
             elements.forEach(element =>{
                 addFavourites(element)
