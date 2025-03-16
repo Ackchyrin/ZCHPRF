@@ -5,8 +5,9 @@
     max-width: 1280px;
     border-radius: 10px;
     width: 0;
-    height: fit-content;
-    flex: 0;
+    flex: none;
+    height: 0;
+    position: absolute;
 }
 
 .mid-second div,
@@ -21,6 +22,8 @@
     border: 1px solid;
     padding: 15px 15px 25px;
     flex: 1;
+    height: fit-content;
+    position: initial;
 }
 
 .mid-second.active div,

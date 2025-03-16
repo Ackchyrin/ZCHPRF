@@ -12,13 +12,12 @@ function calculateSpent(){
             colSingl = inputValue
         }
         skillInventory = 0
-        if(nameSkillInventory == document.querySelectorAll('.spent-data')[index+1].innerText.replace(/: 0$/, '')){
-            document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl - colSkillInventory
-        }else{
-            document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl - skillInventory
+        if(colSpentInventory[document.querySelectorAll('.spent-data')[index+1].innerText.replace(/: \d+$/, '')] != undefined){
+            skillInventory = colSpentInventory[document.querySelectorAll('.spent-data')[index+1].innerText.replace(/: \d+$/, '')]
         }
+        document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl - skillInventory
     })
-    document.querySelector('.spent-data span').innerText = colCommon - colSkillInventory
+    document.querySelector('.spent-data span').innerText = colCommon-colSkillInventory
     autoRaceCommon()
     colCommon = 0
     colRace = 0
@@ -65,8 +64,12 @@ function calculateSpent(){
         if(colRace == undefined){
             colRace = 0
         }
-        document.querySelectorAll('.spent-data span')[index+11].innerText = colSingl-1-colRace
+        skillInventory = 0        
+        if(colSpentInventory[document.querySelectorAll('.spent-data')[index+11].innerText.replace(/: \d+$/, '')] != undefined){
+            skillInventory = colSpentInventory[document.querySelectorAll('.spent-data')[index+11].innerText.replace(/: \d+$/, '')]
+        }        
+        document.querySelectorAll('.spent-data span')[index+11].innerText = colSingl-1-colRace-skillInventory
     })
-    document.querySelectorAll('.spent-data span')[10].innerText = colCommon-6-globalCommonSpecifications
+    document.querySelectorAll('.spent-data span')[10].innerText = colCommon-6-globalCommonSpecifications-colSpecificationsInventory
     setMana()
 }

@@ -50,22 +50,35 @@ footer{
     display: flex;
     justify-content: space-between;
     padding: 20px 10px;
+    margin-top: auto;
 }
 
 .footer-info{
     font-size: 18px;
 }
 
-.footer-date{
-    font-size: 18px;
+.footer-data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: end;
 }
 
-.footer-version{
-    color: black;
+.footer__data-version{
+    color: red;
     font-size: 18px;
-    text-decoration: none;
+    transition: .4s;
 }
 
-.footer-version:visited{
+.footer__data-version:hover{
+    opacity: .7;
+}
+
+.footer__data-version:visited{
     color: black;
+}
+
+.footer__data-date{
+    font-size: 18px;
 }

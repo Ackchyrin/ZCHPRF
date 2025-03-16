@@ -8,6 +8,7 @@
     transform: scaleY(1);
     transition: transform .4s;
     flex: 1;
+    height: fit-content;
 }
 
 .mid.deactive{
@@ -15,7 +16,9 @@
     width: 0;
     padding: 0;
     border: 0;
-    flex: 0;
+    flex: none;
+    height: 0;
+    position: absolute;
 }
 
 .mid.deactive div,
