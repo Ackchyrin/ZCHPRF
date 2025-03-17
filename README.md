@@ -4,3 +4,5 @@
 https://ackchyrin.github.io/ZCHPRF/
 
 Или через кнопку релиз найти последнию актуальную версию.
+
+https://github.com/Ackchyrin/ZCHPRF/releases
