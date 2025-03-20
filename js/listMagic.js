@@ -79,12 +79,12 @@ function addSpell(){
                     Школа заклинания
                     <input>
                     <select>
-                        <option>Восстановления</option>
-                        <option>Иллюзии</option>
-                        <option>Изменения</option>
-                        <option>Колдовства</option>
-                        <option>Разрушения</option>
-                        <option>Собственная</option>
+                        <option>Стихийная</option>
+                        <option>Витральная</option>
+                        <option>Иллюзорная</option>
+                        <option>Астральная</option>
+                        <option>Рунная</option>
+                        <option>Уникальная</option>
                     </select>
                 </label>
                 <label class="spell-long__cost">
@@ -189,7 +189,7 @@ function addChange(x){
 
 function addOption(x){
     x.querySelector('select').addEventListener('change',()=>{
-        if(x.querySelector('select').value == 'Собственная'){
+        if(x.querySelector('select').value == 'Уникальная'){
             x.querySelector('.spell-long__school input').style.display = 'inline'
         }else{
             x.querySelector('.spell-long__school input').style.display = 'none'

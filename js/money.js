@@ -44,6 +44,7 @@ document.querySelector('#goldCalculation').addEventListener('change',()=>{
     }
     calculationAllMoney()
 })
+
 document.querySelector('#silverCalculation').addEventListener('change',()=>{
     document.querySelector('#silver').value = Number(document.querySelector('#silver').value) + Number(document.querySelector('#silverCalculation').value)
     document.querySelector('#silverCalculation').value = ''
@@ -57,6 +58,7 @@ document.querySelector('#silverCalculation').addEventListener('change',()=>{
     }
     calculationAllMoney()
 })
+
 document.querySelector('#copperCalculation').addEventListener('change',()=>{
     document.querySelector('#copper').value = Number(document.querySelector('#copper').value) + Number(document.querySelector('#copperCalculation').value)
     document.querySelector('#copperCalculation').value = ''

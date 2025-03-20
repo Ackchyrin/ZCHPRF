@@ -2,6 +2,7 @@ let dataCharacter = {}
 dataCharacter['skills'] = {}
 dataCharacter['specifications'] = {}
 dataCharacter['spell'] = {}
+dataCharacter['equipment'] = {}
 document.getElementById('fileInput').addEventListener('change', loadFile)
 
 function saveFile(){
@@ -75,6 +76,29 @@ function saveFile(){
     dataCharacter['characterSkills'] = document.querySelector('#characterSkills').value
     dataCharacter['background'] = document.querySelector('#background').value
     dataCharacter['replenishment'] = document.querySelector('#replenishment').value
+    dataCharacter['gold'] = document.querySelector('#gold').value
+    dataCharacter['silver'] = document.querySelector('#silver').value
+    dataCharacter['copper'] = document.querySelector('#copper').value
+    dataCharacter['inventory'] = document.querySelector('#inventory').value
+    document.querySelectorAll('.mid-fourth__equipment-item').forEach((el,index)=>{
+        dataCharacter['equipment'][index] = {}
+        dataCharacter['equipment'][index]['text'] = el.querySelector('textarea').value
+        if(el.querySelector('.bonus-list__item') != undefined){
+            dataCharacter['equipment'][index]['gear'] = {}
+            el.querySelectorAll('.bonus-list__item').forEach((elem,i)=>{
+                dataCharacter['equipment'][index]['gear'][i] = {}                
+                dataCharacter['equipment'][index]['gear'][i]['type'] = elem.querySelector('select').value
+                dataCharacter['equipment'][index]['gear'][i]['specialization'] = elem.querySelectorAll('select')[1].value
+                dataCharacter['equipment'][index]['gear'][i]['value'] = elem.querySelector('input').value
+                if(elem.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
+                    dataCharacter['equipment'][index]['gear'][i]['enabling'] = true
+                }else{
+                    dataCharacter['equipment'][index]['gear'][i]['enabling'] = false
+                }
+            })
+        }
+
+    })
     currentdate = new Date();
     day = currentdate.getDate();
     month = currentdate.getMonth() + 1;
@@ -144,6 +168,10 @@ function loadFile(){
             {selector: "#characterSecond", data: jsonData['character']},
             {selector: "#speciesSecond", data: jsonData['species']},
             {selector: "#replenishment", data: jsonData['replenishment']},
+            {selector: "#gold", data: jsonData['gold']},
+            {selector: "#silver", data: jsonData['silver']},
+            {selector: "#copper", data: jsonData['copper']},
+            {selector: "#inventory", data: jsonData['inventory']},
         ]
         fields.forEach(field => {
             let i = 0
@@ -264,12 +292,12 @@ function loadFile(){
                             Школа заклинания
                             <input value="`+val.schoolManual+`">
                             <select>
-                                <option>Восстановления</option>
-                                <option>Иллюзии</option>
-                                <option>Изменения</option>
-                                <option>Колдовства</option>
-                                <option>Разрушения</option>
-                                <option>Собственная</option>
+                                <option>Стихийная</option>
+                                <option>Витральная</option>
+                                <option>Иллюзорная</option>
+                                <option>Астральная</option>
+                                <option>Рунная</option>
+                                <option>Уникальная</option>
                             </select>
                         </label>
                         <label class="spell-long__cost">
@@ -329,17 +357,98 @@ function loadFile(){
                 if(option.textContent.trim() === val.school.trim()){
                     option.setAttribute('selected', 'selected')
                 }
-                if(val.school == 'Собственная'){
+                if(val.school == 'Уникальная'){
                     element.querySelector('.spell-long__school input').style.display = 'inline'
                 }
             })
             document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length
+        })
+        Object.entries(jsonData['equipment']).forEach(([key, val]) =>{
+            elem = document.querySelectorAll('.mid-fourth__equipment-item')[key]
+            elem.querySelector('textarea').value = val.text
+            if(val.gear != undefined){
+                elem.querySelector('.equipment-item__bonus-list').innerHTML = ''
+                Object.entries(val.gear).forEach(([k, v]) =>{               
+                    elem.querySelector('.equipment-item__bonus-list').insertAdjacentHTML('beforeend', `
+                        <div class="bonus-list__item">
+                            <select>
+                                <option>
+                                    Опыт
+                                </option>
+                                <option>
+                                    Пункт
+                                </option>
+                            </select>
+                            <select>
+                                <option>Мана</option>
+                                <option>Ближний бой</option>
+                                <option>Дальний бой</option>
+                                <option>Акробатика</option>
+                                <option>Защита</option>
+                                <option>Магия</option>
+                                <option>Алхимия</option>
+                                <option>Медицина</option>
+                                <option>Выживание</option>
+                                <option>Красноречие</option>
+                                <option>Навыки вора</option>
+                                <option>Сила</option>
+                                <option>Ловкость</option>
+                                <option>Интеллект</option>
+                                <option>Выносливость</option>
+                                <option>Харизма</option>
+                                <option>Мудрость</option>
+                                <option>Удача</option>
+                            </select>
+                            <input class="number-only">
+                            <div class="item-bonus__list-checkbox deactive">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                            
+                            </div>
+                            <div class="item-bonus__list-delete">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 12H18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    `)
+                    document.querySelectorAll('.number-only').forEach(input =>{
+                        input.addEventListener('input', function(){
+                            this.value = this.value.replace(/[^0-9]/g, '')
+                        })
+                    })
+                    element = elem.querySelectorAll('.equipment-item__bonus-list .bonus-list__item')[k]
+                    element.querySelector('select').querySelectorAll('option').forEach(option =>{
+                        option.removeAttribute('selected')
+                        if(option.textContent.trim() === v.type.trim()){
+                            option.setAttribute('selected', 'selected')
+                        }
+                    })
+                    element.querySelectorAll('select')[1].querySelectorAll('option').forEach(option =>{
+                        option.removeAttribute('selected')
+                        if(option.textContent.trim() === v.specialization.trim()){
+                            option.setAttribute('selected', 'selected')
+                        }
+                    })
+                    element.querySelector('input').value = v.value
+                    if(v.enabling){
+                        element.querySelector('.item-bonus__list-checkbox').classList.remove('deactive')
+                        element.querySelector('.item-bonus__list-checkbox').classList.add('active')
+                    }                    
+                    deleteBonus(element)
+                    activeBonus(element)
+                    activeUse(element)
+                    activeCheckbox(element)
+                    setSpentInventory()
+                })
+            }
         })
     }
 
     setTimeout(() =>{
         if(textTime > 2000 || textTime > 2000 || specificationsTime > 2000){
             setInterval(() =>{
+                calculationAllMoney()
                 modal.innerText = 'Успешно загружен'
                 setTimeout(() =>{
                     modal.classList.remove('active')
@@ -349,6 +458,7 @@ function loadFile(){
                 }, 2000)
             }, Math.max(textTime, skillsTime, specificationsTime) - 2000)
         }else{
+            calculationAllMoney()
             modal.innerText = 'Успешно загружен'
             setTimeout(() =>{
                 modal.classList.remove('active')

@@ -59,22 +59,7 @@ function addBonus(x){
         deleteBonus(element)
         activeBonus(element)
         activeUse(element)
-        element.querySelector('select').addEventListener('click',()=>{
-            if(element.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
-                element.querySelector('.item-bonus__list-checkbox').classList.remove('active')
-                setBonusAll(element)
-                element.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
-                element.querySelector('input').value = ''
-            }
-        })
-        element.querySelectorAll('select')[1].addEventListener('click',()=>{
-            if(element.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
-                element.querySelector('.item-bonus__list-checkbox').classList.remove('active')
-                setBonusAll(element)
-                element.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
-                element.querySelector('input').value = ''
-            }
-        })
+        activeCheckbox(element)
     })
 
 }
@@ -111,6 +96,25 @@ function activeUse(x){
             x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
         }
         setBonusAll(x)
+    })
+}
+
+function activeCheckbox(x){
+    x.querySelector('select').addEventListener('click',()=>{
+        if(x.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
+            x.querySelector('.item-bonus__list-checkbox').classList.remove('active')
+            setBonusAll(x)
+            x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
+            x.querySelector('input').value = ''
+        }
+    })
+    x.querySelectorAll('select')[1].addEventListener('click',()=>{
+        if(x.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
+            x.querySelector('.item-bonus__list-checkbox').classList.remove('active')
+            setBonusAll(x)
+            x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
+            x.querySelector('input').value = ''
+        }
     })
 }
 
@@ -449,9 +453,7 @@ function setSpentInventory(){
                         colPoint += 1 + index
                     }
                 }
-            })
-            console.log(colPoint);
-            
+            })            
             colSpentInventory[`${el.querySelectorAll('select')[1].value}`] += colPoint
             if(['Ближний бой', 'Дальний бой', 'Акробатика', 'Защита', 'Магия','Алхимия', 'Медицина', 'Выживание', 'Красноречие', 'Навыки вора'].includes(el.querySelectorAll('select')[1].value)){
                 colSkillInventory += colPoint
