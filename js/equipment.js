@@ -70,6 +70,7 @@ function activeBonus(x){
     x.querySelector('.item-bonus__list-checkbox').addEventListener('click',()=>{
         x.querySelector('.item-bonus__list-checkbox').classList.toggle('active')
         setBonusAll(x)
+        checkFavoritesSkillsAndSpecifications()
     })
 }
 
@@ -86,6 +87,7 @@ function activeUse(x){
             x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
             setBonusAll(x)
             x.querySelector('input').value = ''
+            checkFavoritesSkillsAndSpecifications()
         }
     })
     x.querySelector('input').addEventListener('change',()=>{
@@ -98,6 +100,7 @@ function activeUse(x){
             x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
         }
         setBonusAll(x)
+        checkFavoritesSkillsAndSpecifications()
     })
 }
 
@@ -108,6 +111,7 @@ function activeCheckbox(x){
             setBonusAll(x)
             x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
             x.querySelector('input').value = ''
+            checkFavoritesSkillsAndSpecifications()
         }
     })
     x.querySelectorAll('select')[1].addEventListener('click',()=>{
@@ -116,6 +120,7 @@ function activeCheckbox(x){
             setBonusAll(x)
             x.querySelector('.item-bonus__list-checkbox').classList.add('deactive')
             x.querySelector('input').value = ''
+            checkFavoritesSkillsAndSpecifications()
         }
     })
 }
@@ -372,7 +377,6 @@ function setBonusAll(x){
                     }else if(!x.querySelector('.item-bonus__list-checkbox').classList.contains('active') && x.querySelector('input').value != ''){  
                         colPoint = 0
                         for (let index = 0; index < x.querySelector('input').value; index++){
-                            console.log(Number(el.querySelector('.specifications-item__square span').innerText));
                             colPoint += Number(el.querySelector('.specifications-item__square span').innerText) - index
                         }
                         for(let index = 1; index <= colPoint; index++){

@@ -138,6 +138,19 @@
     top: 2px;
     right: 0;
     cursor: pointer;
+    transition: .4s;
+}
+
+.equipment-item__bonus-add:hover{
+    background-color: #2f2f2f;
+}
+
+.equipment-item__bonus-add svg path{
+    transition: .4s;
+}
+
+.equipment-item__bonus-add:hover svg path{
+    stroke: white;
 }
 
 .equipment-item__bonus-list{
@@ -194,6 +207,19 @@
     height: 20px;
     border: 1px solid;
     cursor: pointer;
+    transition: .4s;
+}
+
+.item-bonus__list-delete:hover{
+    background-color: #2f2f2f;
+}
+
+.item-bonus__list-delete svg path{
+    transition: .4s;
+}
+
+.item-bonus__list-delete:hover svg path{
+    stroke: white;
 }
 
 .mid-fourth__inventory{

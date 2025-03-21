@@ -3,10 +3,13 @@ dataCharacter['skills'] = {}
 dataCharacter['specifications'] = {}
 dataCharacter['spell'] = {}
 dataCharacter['equipment'] = {}
+dataCharacter['diary'] = {}
+
 document.getElementById('fileInput').addEventListener('change', loadFile)
 
 function saveFile(){
     document.querySelectorAll('.skills-item').forEach(el =>{
+        dataCharacter['skills'][el.querySelector('.skills-item__numbers-input').id] = {}
         colSingl = 0
         let dividerValue = Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))
         let inputValue = Number(el.querySelector('.skills-item__numbers-input').value) || 0
@@ -15,9 +18,11 @@ function saveFile(){
         }else{
             colSingl = inputValue
         }
-        dataCharacter['skills'][el.querySelector('.skills-item__numbers-input').id] = colSingl
+        dataCharacter['skills'][el.querySelector('.skills-item__numbers-input').id]['value'] = colSingl
+        dataCharacter['skills'][el.querySelector('.skills-item__numbers-input').id]['favorites'] = el.querySelector('.skills-item__favourites').classList.contains('active')
     })
     document.querySelectorAll('.specifications-item').forEach(el =>{
+        dataCharacter['specifications'][el.querySelector('.specifications-item__numbers-input').id] = {}
         colSingl = 0
         let dividerValue = Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))
         let inputValue = Number(el.querySelector('.specifications-item__numbers-input').value) || 0
@@ -26,7 +31,8 @@ function saveFile(){
         }else{
             colSingl = inputValue
         }
-        dataCharacter['specifications'][el.querySelector('.specifications-item__numbers-input').id] = colSingl-1
+        dataCharacter['specifications'][el.querySelector('.specifications-item__numbers-input').id]['value'] = colSingl-1
+        dataCharacter['specifications'][el.querySelector('.specifications-item__numbers-input').id]['favorites'] = el.querySelector('.specifications-item__favourites').classList.contains('active')
     })
     document.querySelectorAll('.mid-third__spell').forEach((el,index)=>{
         dataCharacter['spell'][index] = {}
@@ -97,23 +103,35 @@ function saveFile(){
                 }
             })
         }
-
     })
-    currentdate = new Date();
-    day = currentdate.getDate();
-    month = currentdate.getMonth() + 1;
-    year = currentdate.getFullYear();
-    day = day < 10 ? '0' + day : day;
-    month = month < 10 ? '0' + month : month;
-    datetime = day + "." + month + "." + year;
-    const jsonStr = JSON.stringify(dataCharacter, null, 2);
-    const blob = new Blob([jsonStr], { type: 'application/json' });
-    const link = document.createElement('a'); 
-    link.href = URL.createObjectURL(blob); 
-    link.download = document.querySelector('#character').value+" "+datetime+'.json'; 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    document.querySelectorAll('.diary-list__item').forEach((el,index)=>{        
+        if(el.querySelector('.diary-list__item-delete').classList.contains('delete') && el.id != 'skilSpec' && el.id != 'spellDiary'){
+            dataCharacter['diary'][index] = {}
+            dataCharacter['diary'][index]['name'] = el.querySelector('.diary-list__item-name').value
+            dataCharacter['diary'][index]['rol'] = el.querySelector('.diary-list__item-arrow').classList.contains('active')
+            dataCharacter['diary'][index]['hidden'] = document.querySelectorAll('.journal-item__info-hidden')[index].classList.contains('active')
+            dataCharacter['diary'][index]['text'] = document.querySelectorAll('.journal-item textarea')[index].value
+            dataCharacter['diary'][index]['width'] = document.querySelectorAll('.journal-item')[index].offsetHeight
+            dataCharacter['diary'][index]['height'] = document.querySelectorAll('.journal-item')[index].offsetWidth
+            dataCharacter['diary'][index]['left'] = document.querySelectorAll('.journal-item')[index].getBoundingClientRect().left
+            dataCharacter['diary'][index]['top'] = document.querySelectorAll('.journal-item')[index].getBoundingClientRect().top
+        }
+    })
+    currentdate = new Date()
+    day = currentdate.getDate()
+    month = currentdate.getMonth() + 1
+    year = currentdate.getFullYear()
+    day = day < 10 ? '0' + day : day
+    month = month < 10 ? '0' + month : month
+    datetime = day + "." + month + "." + year
+    const jsonStr = JSON.stringify(dataCharacter, null, 2)
+    const blob = new Blob([jsonStr], { type: 'application/json' })
+    const link = document.createElement('a')
+    link.href = URL.createObjectURL(blob)
+    link.download = document.querySelector('#character').value+" "+datetime+'.json' 
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
     document.querySelector('.modal').classList.add('active')
     document.querySelector('.modal').innerText = 'Успешно сохранён'
     setTimeout(() => {
@@ -197,7 +215,11 @@ function loadFile(){
         document.querySelectorAll('.skills-item__numbers-divider').forEach(el=>el.innerText = '/' + 1)
         document.querySelectorAll('.skills-item__square-main div').forEach(el=>el.style.width = 100+"%")
         document.querySelectorAll('.skills-item__numbers-left').forEach(el=>el.classList.add('deactive'))        
-        Object.entries(jsonData['skills']).forEach(([key, val]) =>{
+        Object.entries(jsonData['skills']).forEach(([key, val]) =>{        
+            if(val.favorites){
+                document.querySelector(`label[for="${key}"] .skills-item__favourites`).classList.add('active')
+            }
+            val = val.value
             document.querySelector(`label[for="${key}"]`).querySelector('.skills-item__numbers-left').classList.remove('deactive')
             for(let index = 0; index < val; index++){
                 setTimeout(() =>{
@@ -234,6 +256,10 @@ function loadFile(){
         document.querySelectorAll('.specifications-item__square-main.one div').forEach(el=>el.style.width = 0)
         document.querySelectorAll('.specifications-item__numbers-left').forEach(el=>el.classList.add('deactive'))
         Object.entries(jsonData['specifications']).forEach(([key, val]) =>{
+            if(val.favorites){
+                document.querySelector(`label[for="${key}"] .specifications-item__favourites`).classList.add('active')
+            }
+            val = val.value
             document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-left').classList.remove('deactive')
             for(let index = 0; index < val; index++){
                 setTimeout(() =>{
@@ -272,8 +298,8 @@ function loadFile(){
                 colMana()
                 setManaMagic()
             }, index*50)
-        }
-        Object.entries(jsonData['spell']).forEach((val) =>{
+        }        
+        Object.entries(jsonData['spell']).forEach(([key, val]) =>{
             document.querySelector('.mid-third').insertAdjacentHTML('beforeend',`
                 <div class="mid-third__spell">
                     <div class="mid-third__spell-short">
@@ -340,7 +366,7 @@ function loadFile(){
                         </div>
                     </div>
                 </div>
-            `)
+            `)            
             let element = document.querySelectorAll('.mid-third__spell')[document.querySelectorAll('.mid-third__spell').length - 1]
                 addFavourites(element)
                 addChange(element)
@@ -353,7 +379,7 @@ function loadFile(){
                 addFavouritesSave(element)
             }
             element.querySelectorAll('option').forEach(option =>{
-                option.removeAttribute('selected')
+                option.removeAttribute('selected')                
                 if(option.textContent.trim() === val.school.trim()){
                     option.setAttribute('selected', 'selected')
                 }
@@ -362,6 +388,9 @@ function loadFile(){
                 }
             })
             document.querySelectorAll('.mid-third__tech-information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
+            element.querySelectorAll('input').forEach(el=>el.addEventListener('input',()=>{
+                specialJournalSpell()
+            }))
         })
         Object.entries(jsonData['equipment']).forEach(([key, val]) =>{
             elem = document.querySelectorAll('.mid-fourth__equipment-item')[key]
@@ -445,6 +474,64 @@ function loadFile(){
                 })
             }
         })
+        Object.entries(jsonData['diary']).forEach(([key, val]) =>{
+            if(document.querySelector('.diary-info__hidden').innerText == 'Скрыть'){
+                document.querySelector('.diary').style.height = document.querySelector('.diary').clientHeight+62+'px'
+            }
+            numberDiary = document.querySelectorAll('.diary-list__item').length + 1
+            document.querySelector('.diary-list').insertAdjacentHTML('beforeend', `<div class="diary-list__item">
+                <input value="${val.name}" class="diary-list__item-name">
+                <div class="diary-list__item-arrow">
+                    <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 13 L12 7 L18 13 M12 7 L12 18" stroke="black" stroke-width="2" fill="none"/>
+                    </svg>                          
+                </div>
+                <div class="diary-list__item-delete delete">
+                    <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5 L20 20 M5 20 L20 5" stroke="black" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+            </div>`)
+            console.log(val.text);
+            commonCss = `width: ${val.width}px; height: ${val.height}px; left: ${val.left}px; top: ${val.top}px;`
+            element = document.querySelectorAll('.diary-list__item')[document.querySelectorAll('.diary-list__item').length - 1]
+            document.querySelector('.journal').insertAdjacentHTML('beforeend', `<div class="journal-item" data-collapsed="false" style="${commonCss}">
+                <div class="journal-item__grab"></div>
+                <div class="journal-item__info">
+                    <input class="journal-item__info-name" value="${val.name}">
+                    <div class="journal-item__info-hidden">
+                        <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 13 L12 7 L18 13 M12 7 L12 18" stroke="black" stroke-width="2" fill="none"/>
+                        </svg>   
+                    </div>
+                    <div class="journal-item__info-arrow">
+                        <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 13 L12 7 L18 13 M12 7 L12 18" stroke="black" stroke-width="2" fill="none"/>
+                        </svg>   
+                    </div>
+                </div>
+                <textarea>${val.text}</textarea>
+                <div class="journal-item__vertically"></div>
+                <div class="journal-item__horizontally"></div>
+                <div class="journal-item__diagonals"></div>
+            </div>`)
+            elem = document.querySelectorAll('.journal-item')[document.querySelectorAll('.journal-item').length - 1]
+            dragAndDrop(elem)
+            hiddenJournal(elem)
+            deleteDiary(element,elem)
+            swapNameDiaryToJournal(element,elem)
+            rolDiary(element,elem)
+            resizeVertically(elem)
+            resizeHorizontally(elem)
+            resizeDiagonals(elem)
+            addHintsDiary()
+            if(val.rol){
+                element.querySelector('.diary-list__item-arrow').click()
+            }
+            if(val.hidden){
+                elem.querySelector('.journal-item__info-hidden').click()
+            }
+        })        
     }
 
     setTimeout(() =>{
@@ -453,6 +540,9 @@ function loadFile(){
                 calculationAllMoney()
                 addHintsSpell()
                 addHintsBonusEquipment()
+                addHintsDiary()
+                specialJournalSpell()
+                specialJournalSkillsAndSpecifications()
                 modal.innerText = 'Успешно загружен'
                 setTimeout(() =>{
                     modal.classList.remove('active')
@@ -465,6 +555,9 @@ function loadFile(){
             calculationAllMoney()
             addHintsSpell()
             addHintsBonusEquipment()
+            addHintsDiary()
+            specialJournalSpell()
+            specialJournalSkillsAndSpecifications()
             modal.innerText = 'Успешно загружен'
             setTimeout(() =>{
                 modal.classList.remove('active')

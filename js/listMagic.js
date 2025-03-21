@@ -136,6 +136,9 @@ function addSpell(){
     deleteSpell(element)
     document.querySelectorAll('.mid-third__tech-information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
     addHintsSpell()
+    element.querySelectorAll('input').forEach(el=>el.addEventListener('input',()=>{
+        specialJournalSpell()
+    }))
 }
 
 function addFavourites(x){
@@ -146,6 +149,7 @@ function addFavourites(x){
         }else{
             x.style.order = 2
         }
+        specialJournalSpell()
     })
 }
 
@@ -185,6 +189,7 @@ function addChange(x){
         }
         requestAnimationFrame(animate)
         addDescription(x)
+        specialJournalSpell()
     })
 }
 
@@ -195,6 +200,7 @@ function addOption(x){
         }else{
             x.querySelector('.spell-long__school input').style.display = 'none'
         }
+        specialJournalSpell()
     })
 }
 
@@ -204,7 +210,7 @@ function addDescription(x){
     x.querySelector('.spell-short__range').innerHTML = x.querySelector('.spell-long__range input').value
     x.querySelector('.spell-short__time').innerHTML = x.querySelector('.spell-long__time input').value
     x.querySelector('.spell-short__duration').innerHTML = x.querySelector('.spell-long__duration input').value
-
+    specialJournalSpell()
 }
 
 function deleteSpell(x){
@@ -222,5 +228,6 @@ function deleteSpell(x){
             x.remove()
             document.querySelectorAll('.mid-third__tech-information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
         }
+        specialJournalSpell()
     })
 }

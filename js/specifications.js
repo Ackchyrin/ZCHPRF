@@ -99,6 +99,11 @@ function countingspecifications(x){
     }
     calculateSpent()
     setAdvantage()
+    document.querySelectorAll('.specifications-item__favourites').forEach(el=>{
+        if(el.classList.contains('active')){
+            specialJournalSkillsAndSpecifications()
+        }
+    })
 }
 
 function setAdvantage(){
@@ -108,3 +113,8 @@ function setAdvantage(){
 }
 
 setAdvantage()
+
+document.querySelectorAll('.specifications-item__favourites').forEach(el=>el.addEventListener('click',()=>{
+    el.classList.toggle('active')
+    specialJournalSkillsAndSpecifications()
+}))

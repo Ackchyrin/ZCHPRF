@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./css/midFourth.css">
         <link rel="stylesheet" href="./css/right.css">
         <link rel="stylesheet" href="./css/footerUtils.css">
+        <link rel="stylesheet" href="./css/journal.css">
         <link rel="icon" href="./image/favicon.png" type="image/x-icon">
     </head>
     <body>
@@ -53,6 +54,19 @@
             <div class="hot-description">CTRL+V: <span>Выключить горячие клавишы</span></div>
             <div class="hot-description">CTRL+B: <span>Переключить лист персонажа</span></div>
             <div class="hot-description">CTRL+Q: <span>Сохранить персонажа</span></div>
+        </div>
+        <div class="diary" data-collapsed="true">
+            <div class="diary-info">
+                Записи
+                <div class="diary-info__hidden" onclick="hiddenDiary()">
+                    Показать
+                </div>
+            </div>
+            <div class="diary-add"  onclick="addDiary()">
+                Добавить дневник
+            </div>
+            <div class="diary-list">
+            </div>
         </div>
         <div class="spent" data-collapsed="true">
             <div class="spent-info">
@@ -231,6 +245,11 @@
                         </svg>  
                     </div>                   
                 </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
             </label>
             <label class="skills-item" for="ranger">
                 <div class="skills-item__title">
@@ -275,6 +294,11 @@
                             <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>  
                     </div>                   
+                </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
                 </div>
             </label>
             <label class="skills-item" for="acrobatics">
@@ -321,6 +345,11 @@
                         </svg>  
                     </div>                   
                 </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
             </label>
             <label class="skills-item" for="defense">
                 <div class="skills-item__title">
@@ -365,6 +394,11 @@
                             <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>  
                     </div>                   
+                </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
                 </div>
             </label>
             <label class="skills-item" for="magic">
@@ -411,6 +445,11 @@
                         </svg>  
                     </div>                   
                 </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
             </label>
             <label class="skills-item" for="alchemy">
                 <div class="skills-item__title">
@@ -455,6 +494,11 @@
                             <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>  
                     </div>                   
+                </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
                 </div>
             </label>
             <label class="skills-item" for="medicine">
@@ -501,6 +545,11 @@
                         </svg>  
                     </div>
                 </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
             </label>
             <label class="skills-item" for="survival">
                 <div class="skills-item__title">
@@ -545,6 +594,11 @@
                             <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>  
                     </div>                   
+                </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
                 </div>
             </label>
             <label class="skills-item" for="speech">
@@ -591,6 +645,11 @@
                         </svg>  
                     </div>                   
                 </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </div>
             </label>
             <label class="skills-item" for="thief">
                 <div class="skills-item__title">
@@ -635,6 +694,11 @@
                             <path d="M10 5 L15 10 L10 15" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>  
                     </div>                   
+                </div>
+                <div class="skills-item__favourites">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
                 </div>
             </label>
             <label class="features" for="features">
@@ -694,6 +758,11 @@
                         <span>1</span>
                         <advantage></advantage>
                     </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
                 </label>
                 <label class="specifications-item" for="dexterity">
                     <div class="specifications-item__title">Ловкость</div>
@@ -743,6 +812,11 @@
                         </div>
                         <span>1</span>
                         <advantage></advantage>
+                    </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
                     </div>
                 </label>
                 <label class="specifications-item" for="intelligence">
@@ -794,6 +868,11 @@
                         <span>1</span>
                         <advantage></advantage>
                     </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
                 </label>
                 <label class="specifications-item" for="endurance">
                     <div class="specifications-item__title">Выносливость</div>
@@ -843,6 +922,11 @@
                         </div>
                         <span>1</span>
                         <advantage></advantage>
+                    </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
                     </div>
                 </label>
                 <label class="specifications-item" for="charisma">
@@ -894,6 +978,11 @@
                         <span>1</span>
                         <advantage></advantage>
                     </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
                 </label>
                 <label class="specifications-item" for="wisdom">
                     <div class="specifications-item__title">Мудрость</div>
@@ -944,6 +1033,11 @@
                         <span>1</span>
                         <advantage></advantage>
                     </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
                 </label>
                 <label class="specifications-item" for="luck">
                     <div class="specifications-item__title">Удача</div>
@@ -993,6 +1087,11 @@
                         </div>
                         <span>1</span>
                         <advantage></advantage>
+                    </div>
+                    <div class="specifications-item__favourites">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
                     </div>
                 </label>
             </div>
@@ -1486,11 +1585,11 @@
             Отдельная благодарность _mamamakusa за помощь с листом заклинаний
         </div>
         <div class="footer-data">
-            <a class="footer__data-documentation" target="_blank" href="https://docs.google.com/document/d/1Ur-MJR68Hkz6LVT2MbngMAd5cpLM8qZ3X0Lcof5BiF4/edit?tab=t.95zegmva1r54">
+            <a class="footer__data-documentation" target="_blank" href="https://drive.google.com/drive/folders/1wCtQvNUyljVjBp8QAYv7OqfBgPIFBjQq">
                 Ссылка на документацию по составлению персонажа
             </a>
             <a href="https://github.com/Ackchyrin/ZCHPRF" target="_blank" class="footer__data-version">
-                GIT Версия: 1.9.5 DEFAULT BASIS
+                GIT Версия: 2.0 RELIS
             </a>
             <div class="footer__data-date">
                 @2025
@@ -1501,6 +1600,7 @@
     <div id="output"></div>
     <div class="modal"></div>
     <div class="hints hiden"></div>
+    <div class="journal"></div>
     <script src="./js/main.js"></script>
     <script src="./js/mana.js"></script>
     <script src="./js/input.js"></script>
@@ -1517,4 +1617,5 @@
     <script src="./js/money.js"></script>
     <script src="./js/equipment.js"></script>
     <script src="./frame/html2canvas.min.js"></script>
+    <script src="./js/diary.js"></script>
 </html>

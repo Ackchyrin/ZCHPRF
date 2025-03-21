@@ -152,6 +152,187 @@
     font-size: 16px;
 }
 
+.diary{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+    overflow: hidden;
+    background-color: white;
+    height: 60px;
+}
+
+.diary-info{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.diary-info__hidden{
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .4s;
+}
+
+.diary-info__hidden:hover{
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.diary-add{
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transition: .4s;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.diary-add:hover {
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.diary-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.diary-list__item{
+    display: flex;
+    gap: 10px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.diary-list__item-name{
+    border: none;
+    outline: none;
+    width: 270px;
+    font-family: 'Segoe Script';
+    font-size: 18px;
+}
+
+.diary-list__item-arrow{
+    margin-left: auto;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.diary-list__item-arrow:hover{
+    background-color: #2f2f2f;
+}
+
+.diary-list__item-arrow svg{
+    transform: rotateZ(225deg);
+}
+
+.diary-list__item-arrow.active svg{
+    transform: rotateZ(45deg);
+}
+
+.diary-list__item-arrow svg path{
+    transition: .4s;
+}
+
+.diary-list__item-arrow:hover svg path{
+    stroke: white;
+}
+
+.diary-list__item-arrow.deactive{
+    pointer-events: none;
+    cursor: default;
+    opacity: .4;
+}
+
+.diary-list__item-delete{
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.diary-list__item-delete:hover{
+    background-color: #2f2f2f;
+}
+
+
+.diary-list__item-delete svg path{
+    transition: .4s;
+}
+
+.diary-list__item-delete:hover svg path{
+    stroke: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .spent{
     display: flex;
     flex-direction: column;

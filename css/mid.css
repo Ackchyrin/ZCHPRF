@@ -179,6 +179,7 @@
     width: fit-content;
     width: 32%;
     cursor: pointer;
+    position: relative;
 }
 
 .skills-item__title{
@@ -307,6 +308,36 @@
     font-size: 18px;
 }
 
+.skills-item__favourites{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
+    cursor: pointer;
+    right: 10px;
+    transition: .4s;
+}
+
+.skills-item__favourites:hover{
+    background-color: #2f2f2f;
+}
+
+.skills-item__favourites svg{
+    transition: .4s;
+}
+
+.skills-item__favourites svg:hover{
+    stroke: gold;
+    fill: white;
+}
+
+.skills-item__favourites.active svg{
+    fill: gold;
+}
+
 .features{
     width: 66%;
     display: flex;
@@ -362,6 +393,8 @@
     gap: 5px;
     justify-content: space-between;
     cursor: pointer;
+    position: relative;
+    padding-right: 30px;
 }
 
 .specifications-item__title{
@@ -502,6 +535,38 @@
     display: block;
     margin-left: 10px;
     width: 30px;
+}
+
+.specifications-item__favourites{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
+    cursor: pointer;
+    right: 0;
+    transition: .4s;
+    transform: translate(0, -50%);
+    top: 50%;
+}
+
+.specifications-item__favourites:hover{
+    background-color: #2f2f2f;
+}
+
+.specifications-item__favourites svg{
+    transition: .4s;
+}
+
+.specifications-item__favourites svg:hover{
+    stroke: gold;
+    fill: white;
+}
+
+.specifications-item__favourites.active svg{
+    fill: gold;
 }
 
 .abilities{

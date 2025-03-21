@@ -240,12 +240,33 @@
     cursor: pointer;
 }
 
+.spell-system__favourites:hover{
+    background-color: #2f2f2f;
+}
+
+.spell-system__favourites svg{
+    transition: .4s;
+}
+
+.spell-system__favourites svg:hover{
+    stroke: gold;
+    fill: white;
+}
+
 .spell-system__favourites.active svg{
     fill: gold;
 }
 
 .spell-system__change svg{
     transition:.4s;
+}
+
+.spell-system__change:hover{
+    background-color: #2f2f2f;
+}
+
+.spell-system__change:hover svg{
+    stroke: white;
 }
 
 .spell-system__change.active svg{

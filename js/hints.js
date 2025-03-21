@@ -101,12 +101,15 @@ document.querySelectorAll('.equipment-item__bonus').forEach(el=>{
 document.querySelectorAll('.equipment-item__bonus-add').forEach(el=>{
     el.addEventListener('mouseenter',setHint(el,'Добавить бонус к снаряжению.'))
 })
+document.querySelectorAll('.skills-item__favourites').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,'Добавляет выбранный навык в отдельный дневник.'))
+})
+document.querySelectorAll('.specifications-item__favourites').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,'Добавляет выбранную характереистику в отдельный дневник.'))
+})
 document.querySelector('.mid-fourth__inventory').addEventListener('mouseenter',setHint(document.querySelector('.mid-fourth__inventory'),'Опись вашего инвентаря.'))
-
-
-
-document.querySelectorAll('.hot-info__button')[1].click();
-
+document.querySelector('.diary').addEventListener('mouseenter',setHint(document.querySelector('.diary'),'Вкладка позволяет делать записи и просматривать избранное.'))
+document.querySelector('.diary-add').addEventListener('mouseenter',setHint(document.querySelector('.diary-add'),'Добавить новый дневник.'))
 
 function addHintsSpell(){
     document.querySelectorAll('.spell-short__title').forEach(el=>{
@@ -187,3 +190,23 @@ function addHintsBonusEquipment(){
     })
 }
 
+function addHintsDiary(){
+    document.querySelectorAll('.diary-list__item-name').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Название вкладки.'))
+    })
+    document.querySelectorAll('.journal-item__info-name').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Название вкладки.'))
+    })
+    document.querySelectorAll('.diary-list__item-arrow').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Свернуть/Вернуть вкладку в оверлей.'))
+    })
+    document.querySelectorAll('.journal-item__info-arrow').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Свернуть/Вернуть вкладку в оверлей.'))
+    })
+    document.querySelectorAll('.diary-list__item-delete').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Удалить/Вернуть вкладку.'))
+    })
+    document.querySelectorAll('.journal-item__info-hidden').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Свернуть/Развернуть в минималистичный вид.'))
+    })
+}

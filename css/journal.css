@@ -1,0 +1,160 @@
+.journal{
+    position: absolute;
+}
+
+.journal-item{
+    width: 300px;
+    height: 300px;
+    background: white;
+    position: fixed;
+    top: 5px;
+    border-radius: 10px;
+    border: 1px solid;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.journal-item__grab{
+    min-height: 10px;
+    width: 100%;
+    cursor: grab;
+}
+
+.journal-item__grab.grab{
+    cursor: grabbing;
+}
+
+.journal-item.deactive{
+    display: none;
+}
+
+.journal-item__info{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.journal-item__info-name{
+    border: none;
+    outline: none;
+    font-family: 'Segoe Script';
+    font-size: 18px;
+    width: 100%;
+}
+
+.journal-item__info-hidden{
+    margin-left: auto;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.journal-item__info-hidden:hover{
+    background-color: #2f2f2f;
+}
+
+.journal-item__info-hidden.active svg{
+    transform: rotateX(180deg);
+    transition: .4s;
+}
+
+.journal-item__info-hidden svg path{
+    transition: .4s;
+}
+
+.journal-item__info-hidden:hover svg path{
+    stroke: white;
+}
+
+.journal-item__info-arrow{
+    margin-left: auto;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.journal-item__info-arrow:hover{
+    background-color: #2f2f2f;
+}
+
+.journal-item__info-arrow svg{
+    transform: rotateZ(225deg);
+}
+
+.journal-item__info-arrow svg path{
+    transition: .4s;
+}
+
+.journal-item__info-arrow:hover svg path{
+    stroke: white;
+}
+
+.journal-item textarea{
+    height: 100%;
+    outline: none;
+    font-family: 'Segoe Script';
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid;
+    min-width: 280px;
+    min-height: 220px;
+    margin: 0 10px;
+}
+
+.journal-item__info-list{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-list__item{
+    display: flex;
+    gap: 10px;
+}
+
+.journal-item__vertically{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    cursor: ns-resize;
+}
+
+.journal-item__horizontally{
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    right: 0px;
+    cursor: ew-resize;
+}
+
+.journal-item__diagonals{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    cursor: nwse-resize;
+}

@@ -92,4 +92,14 @@ function countingSkills(x){
         x.querySelector('.skills-item__square span').style.color = 'rgba(30, 180, 120, 1)'
     }
     calculateSpent()
+    document.querySelectorAll('.skills-item__favourites').forEach(el=>{
+        if(el.classList.contains('active')){
+            specialJournalSkillsAndSpecifications()
+        }
+    })
 }
+
+document.querySelectorAll('.skills-item__favourites').forEach(el=>el.addEventListener('click',()=>{
+    el.classList.toggle('active')
+    specialJournalSkillsAndSpecifications()
+}))
