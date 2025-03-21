@@ -6,19 +6,19 @@ let keyDownHandlerA = function(event){
 
 let keyDownHandlerZ = function(event){
     if(event.ctrlKey && (event.key.toLowerCase() === 'z' || event.key === 'я')){
-        takeshot();
+        takeshot()
     }
 }
 
 let keyDownHandlerC = function(event){
     if(event.ctrlKey && (event.key.toLowerCase() === 'c' || event.key === 'с')){
-        document.querySelectorAll('.right-container__button')[2].click();
+        document.querySelectorAll('.hot-info__button')[1].click()
     }
 }
 
 let keyDownHandlerV = function(event){
     if(event.ctrlKey && (event.key.toLowerCase() === 'v' || event.key === 'м')){
-        document.querySelectorAll('.right-container__button')[3].click()
+        document.querySelector('.hot-info__button').click()
     }
 }
 

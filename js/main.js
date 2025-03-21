@@ -83,7 +83,6 @@ function openListMain(x){
     document.querySelector('.mid').classList.remove('deactive')
     document.querySelector('.mid-third').classList.remove('active')
     document.querySelector('.mid-fourth').classList.remove('active')
-    document.querySelectorAll('.right-container__button')[8].classList.add('deactive')
 }
 
 function openListCharacter(x){
@@ -93,7 +92,6 @@ function openListCharacter(x){
     document.querySelector('.mid').classList.add('deactive')
     document.querySelector('.mid-third').classList.remove('active')
     document.querySelector('.mid-fourth').classList.remove('active')
-    document.querySelectorAll('.right-container__button')[8].classList.add('deactive')
 }
 
 function openListMagic(x){
@@ -103,7 +101,6 @@ function openListMagic(x){
     document.querySelector('.mid').classList.add('deactive')
     document.querySelector('.mid-third').classList.add('active')
     document.querySelector('.mid-fourth').classList.remove('active')
-    document.querySelectorAll('.right-container__button')[8].classList.remove('deactive')
     setManaMagic()
 }
 
@@ -114,7 +111,6 @@ function openListInventory(x){
     document.querySelector('.mid').classList.add('deactive')
     document.querySelector('.mid-third').classList.remove('active')
     document.querySelector('.mid-fourth').classList.add('active')
-    document.querySelectorAll('.right-container__button')[8].classList.add('deactive')
 }
 
 function openButtonRight(){

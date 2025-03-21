@@ -28,12 +28,10 @@
     color: white;
 }
 
-a.right-container__button{
-    text-decoration: none;
-    color: black;
-}
-
 .right-container__button.deactive{
-    display: none;
+    cursor: default;
+    opacity: .4;
+    background-color: #2f2f2f;
+    color: white;
+    border: none;
 }
-

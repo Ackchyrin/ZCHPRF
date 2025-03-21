@@ -10,11 +10,11 @@ function setManaMagic(){
     colManaMagic()
 }
 
-document.querySelector('.mid-third__information input').addEventListener('input',()=>{
-    if(document.querySelector('.mid-third__information input').value == ''){
-        document.querySelector('.mid-third__information input').classList.remove('active')
+document.querySelector('.mid-third__tech-information input').addEventListener('input',()=>{
+    if(document.querySelector('.mid-third__tech-information input').value == ''){
+        document.querySelector('.mid-third__tech-information input').classList.remove('active')
     }else{
-        document.querySelector('.mid-third__information input').classList.add('active')
+        document.querySelector('.mid-third__tech-information input').classList.add('active')
     }
 })
 
@@ -57,7 +57,7 @@ function colManaMagic(){
             i++;
         }
     });
-    document.querySelector('.mid-third__information span').innerText =  i+'/'+document.querySelectorAll('.mid-third__mana svg').length
+    document.querySelector('.mid-third__tech-information span').innerText =  i+'/'+document.querySelectorAll('.mid-third__mana svg').length
 }
 
 function addSpell(){
@@ -134,7 +134,8 @@ function addSpell(){
     addChange(element)
     addOption(element)
     deleteSpell(element)
-    document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length
+    document.querySelectorAll('.mid-third__tech-information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
+    addHintsSpell()
 }
 
 function addFavourites(x){
@@ -219,7 +220,7 @@ function deleteSpell(x){
         }
         if(x.querySelector('.spell-long__delete').innerText == "Уверенны"){
             x.remove()
-            document.querySelectorAll('.mid-third__information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
+            document.querySelectorAll('.mid-third__tech-information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
         }
     })
 }

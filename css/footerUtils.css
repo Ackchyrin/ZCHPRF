@@ -65,6 +65,16 @@ footer{
     align-items: end;
 }
 
+.footer__data-documentation{
+    color: gold;
+    font-size: 18px;
+    transition: .4s;
+}
+
+.footer__data-documentation:hover{
+    opacity: .7;
+}
+
 .footer__data-version{
     color: red;
     font-size: 18px;
@@ -81,4 +91,8 @@ footer{
 
 .footer__data-date{
     font-size: 18px;
+}
+
+.footer__data-date:hover{
+    opacity: .7;
 }

@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="./css/right.css">
         <link rel="stylesheet" href="./css/footerUtils.css">
         <link rel="icon" href="./image/favicon.png" type="image/x-icon">
-        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     </head>
     <body>
       <div class="left">
@@ -26,6 +25,7 @@
                 </div>
             </div>
             <div class="system-button">
+                <div class="system-button__tech" onclick="takeshot()">Фото листа</div>
                 <div class="system-button__tech" onclick="saveFile()">Сохранить</div>
             </div>
             <div class="system-file">
@@ -36,10 +36,16 @@
         </div>
         <div class="hot" data-collapsed="true">
             <div class="hot-info">
-                Информация о горячих клавишах
+                Информация о горячих клавишах и подсказки
                 <div class="hot-info__hidden" onclick="hiddenHot()">
                     Показать
                 </div>
+            </div>
+            <div class="hot-info__button" onclick="setHot(this)">
+                Включить горячие клавиши
+            </div>
+            <div class="hot-info__button" onclick="takeHints(this)">
+                Включить подсказки
             </div>
             <div class="hot-description">CTRL+A: <span>Выбрать файл для импорта</span></div>
             <div class="hot-description">CTRL+Z: <span>Сделать фото листа</span></div>
@@ -1117,37 +1123,42 @@
       <div class="mid-third">
         <div class="mid-third__mana">
         </div>
-        <div class="mid-third__information">
-            <div>
-                Количество маны
-                <span></span>
+        <div class="mid-third__tech">
+            <div class="mid-third__tech-information">
+                <div>
+                    Количество маны
+                    <span></span>
+                </div>
+                <div>
+                    Заклинаний
+                    <span></span>
+                </div>
+                <div>
+                    Скорость восстановления маны
+                    <input id="replenishment" class="number-only">
+                </div>
             </div>
-            <div>
-                Заклинаний
-                <span></span>
-            </div>
-            <div>
-                Скорость восстаноавления маны
-                <input id="replenishment" class="number-only">
+            <div class="mid-third__tech-add" onclick="addSpell()">
+                Добавить заклинание
             </div>
         </div>
       </div>
       <div class="mid-fourth">
         <div class="mid-fourth__money">
             <div class="mid-fourth__money-coin">
-                Золотых:
+                <span class="money-coin__gold">Золотых:</span>
                 <input id="gold" class="number-only">
                 <span class="money-coin__plus">+</span>
                 <input id="goldCalculation" class="moneyOnly">
             </div>
             <div>
-                Серебрянных:
+                <span class="money-coin__silver">Серебрянных:</span>
                 <input id="silver" class="number-only">
                 <span class="money-coin__plus">+</span>
                 <input id="silverCalculation" class="moneyOnly">
             </div>
             <div>
-                Медных:
+                <span class="money-coin__copper">Медных:</span>
                 <input id="copper" class="number-only">
                 <span class="money-coin__plus">+</span>
                 <input id="copperCalculation" class="moneyOnly">
@@ -1452,9 +1463,6 @@
       </div>
       <div class="right">
         <div class="right-container">
-            <div class="right-container__button" onclick="takeshot()">
-                Фото листа
-            </div>
             <div class="right-container__button deactive" onclick="openListMain(this)">
                 Статы персонажа
             </div>
@@ -1467,29 +1475,20 @@
             <div class="right-container__button" onclick="openListInventory(this)">
                 Инвентарь персонажа
             </div>
-            <div class="right-container__button" onclick="takeHints(this)">
-                Включить подсказки
-            </div>
-            <div class="right-container__button" onclick="setHot(this)">
-                Включить горячие клавиши
-            </div>
-            <a class="right-container__button" target="_blank" href="https://docs.google.com/document/d/1Ur-MJR68Hkz6LVT2MbngMAd5cpLM8qZ3X0Lcof5BiF4/edit?tab=t.95zegmva1r54">
-                Ссылка на документацию
-            </a>
-            <div class="right-container__button deactive" onclick="addSpell()">
-                Добавить заклинание
-            </div>
         </div>
       </div>
     <footer>
         <div class="footer-info">
-            Создано при помощи 5 банок бэрна
+            Создано при помощи 6 банок бэрна
             <br>
             Благодарность за написание документации ryoku5kane
             <br>
             Отдельная благодарность _mamamakusa за помощь с листом заклинаний
         </div>
         <div class="footer-data">
+            <a class="footer__data-documentation" target="_blank" href="https://docs.google.com/document/d/1Ur-MJR68Hkz6LVT2MbngMAd5cpLM8qZ3X0Lcof5BiF4/edit?tab=t.95zegmva1r54">
+                Ссылка на документацию по составлению персонажа
+            </a>
             <a href="https://github.com/Ackchyrin/ZCHPRF" target="_blank" class="footer__data-version">
                 GIT Версия: 1.9.5 DEFAULT BASIS
             </a>
@@ -1517,4 +1516,5 @@
     <script src="./js/listMagic.js"></script>
     <script src="./js/money.js"></script>
     <script src="./js/equipment.js"></script>
+    <script src="./frame/html2canvas.min.js"></script>
 </html>

@@ -110,7 +110,7 @@ function saveFile(){
     const blob = new Blob([jsonStr], { type: 'application/json' });
     const link = document.createElement('a'); 
     link.href = URL.createObjectURL(blob); 
-    link.download = document.querySelector('#name').value+" "+datetime+'.json'; 
+    link.download = document.querySelector('#character').value+" "+datetime+'.json'; 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -361,7 +361,7 @@ function loadFile(){
                     element.querySelector('.spell-long__school input').style.display = 'inline'
                 }
             })
-            document.querySelectorAll('.mid-third__information span')[1].innerHTML = elements.length
+            document.querySelectorAll('.mid-third__tech-information span')[1].innerHTML = document.querySelectorAll('.mid-third__spell').length
         })
         Object.entries(jsonData['equipment']).forEach(([key, val]) =>{
             elem = document.querySelectorAll('.mid-fourth__equipment-item')[key]
@@ -400,10 +400,12 @@ function loadFile(){
                                 <option>Удача</option>
                             </select>
                             <input class="number-only">
-                            <div class="item-bonus__list-checkbox deactive">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                            
+                            <div class="item-bonus__list-checkbox-hover">
+                                <div class="item-bonus__list-checkbox deactive">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                            
+                                </div>
                             </div>
                             <div class="item-bonus__list-delete">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -449,6 +451,8 @@ function loadFile(){
         if(textTime > 2000 || textTime > 2000 || specificationsTime > 2000){
             setInterval(() =>{
                 calculationAllMoney()
+                addHintsSpell()
+                addHintsBonusEquipment()
                 modal.innerText = 'Успешно загружен'
                 setTimeout(() =>{
                     modal.classList.remove('active')
@@ -459,6 +463,8 @@ function loadFile(){
             }, Math.max(textTime, skillsTime, specificationsTime) - 2000)
         }else{
             calculationAllMoney()
+            addHintsSpell()
+            addHintsBonusEquipment()
             modal.innerText = 'Успешно загружен'
             setTimeout(() =>{
                 modal.classList.remove('active')

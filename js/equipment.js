@@ -38,10 +38,12 @@ function addBonus(x){
                     <option>Удача</option>
                 </select>
                 <input class="number-only">
-                <div class="item-bonus__list-checkbox deactive">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                            
+                <div class="item-bonus__list-checkbox-hover">
+                    <div class="item-bonus__list-checkbox deactive">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 12L10 16L18 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                            
+                    </div>
                 </div>
                 <div class="item-bonus__list-delete">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +62,8 @@ function addBonus(x){
         activeBonus(element)
         activeUse(element)
         activeCheckbox(element)
+        addHintsBonusEquipment()
     })
-
 }
 
 function activeBonus(x){

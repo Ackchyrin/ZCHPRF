@@ -24,7 +24,8 @@ function takeHints(x){
     }
 }
 
-document.querySelector('.system-button__tech').addEventListener('mouseenter',setHint(document.querySelector('.system-button__tech'),'Позволяет сохранить файл на компьютер.'))
+document.querySelector('.system-button__tech').addEventListener('mouseenter',setHint(document.querySelector('.system-button__tech'),'Позволяет сделать фото активного листа.'))
+document.querySelectorAll('.system-button__tech')[1].addEventListener('mouseenter',setHint(document.querySelectorAll('.system-button__tech')[1],'Позволяет сохранить файл на компьютер.'))
 document.querySelector('.system-file__button').addEventListener('mouseenter',setHint(document.querySelector('.system-file__button'),'Выбор вашего персонажа и его загрузка.'))
 document.querySelector('.hot').addEventListener('mouseenter',setHint(document.querySelector('.hot'),'Информация о горячих клавишах.'))
 document.querySelector('.spent').addEventListener('mouseenter',setHint(document.querySelector('.spent'),'Информация о затраченном опыте прокачки.'))
@@ -59,7 +60,6 @@ document.querySelector('.beauty').addEventListener('mouseenter',setHint(document
 document.querySelector('.mid-second__info-item').addEventListener('mouseenter',setHint(document.querySelector('.mid-second__info-item'),'Имя игрока.'))
 document.querySelectorAll('.mid-second__info-item')[1].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-second__info-item')[1],'Имя персонажа.'))
 document.querySelectorAll('.mid-second__info-item')[2].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-second__info-item')[2],'Раса персонажа.'))
-
 document.querySelectorAll('.mid-second__info-item')[3].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-second__info-item')[3],'Возраст персонажа.'))
 document.querySelectorAll('.mid-second__info-item')[4].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-second__info-item')[4],'Рост персонажа.'))
 document.querySelectorAll('.mid-second__info-item')[5].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-second__info-item')[5],'Вес персонажа.'))
@@ -74,3 +74,116 @@ document.querySelectorAll('.mid-character')[2].addEventListener('mouseenter',set
 document.querySelectorAll('.mid-character')[3].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-character')[3],'Это внутренние переживания, опасения или фобии, которые вызывают у него тревогу или панику. Это может быть что-то конкретное, например, боязнь высоты, или более абстрактное, как страх одиночества или провала. Страхи помогут сделать вашего персонажа глубже, интереснее и человечнее. Они раскрывают его уязвимость и добавляют драматизма в историю.'))
 document.querySelectorAll('.mid-character')[4].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-character')[4],'Навыки которые не относятся к основным навыкам персонажам (Например игра на музыкальном инструменте или быстрое чтение).'))
 document.querySelectorAll('.mid-character')[5].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-character')[5],'Это история, которая объясняет, кем был ваш герой до начала игры. В ролевых играх предыстория делает вашего героя более живым и интересным, а также даёт Гейммастеру материал для создания увлекательных сюжетов, связанных с вашим персонажем.'))
+document.querySelector('.hot-info__button').addEventListener('mouseenter',setHint(document.querySelector('.hot-info__button'),'Включает/Выключает горячие клавиши.'))
+document.querySelectorAll('.hot-info__button')[1].addEventListener('mouseenter',setHint(document.querySelectorAll('.hot-info__button')[1],'Включает/Выключает подсказки при наведение.'))
+document.querySelector('.right-container__button').addEventListener('mouseenter',setHint(document.querySelector('.right-container__button'),'Лист основных характеристик персонажа.'))
+document.querySelectorAll('.right-container__button')[1].addEventListener('mouseenter',setHint(document.querySelectorAll('.right-container__button')[1],'Лист подробного описания характере,внешнего вида и истории персонажа.'))
+document.querySelectorAll('.right-container__button')[2].addEventListener('mouseenter',setHint(document.querySelectorAll('.right-container__button')[2],'Лист заклинаниний персонажа.'))
+document.querySelectorAll('.right-container__button')[3].addEventListener('mouseenter',setHint(document.querySelectorAll('.right-container__button')[3],'Лист инвентаря персонажа.'))
+document.querySelector('.mid-third__mana').addEventListener('mouseenter',setHint(document.querySelector('.mid-third__mana'),'Визуальное отображение вашей максимальной и текущей маны.'))
+document.querySelector('.mid-third__tech-information div').addEventListener('mouseenter',setHint(document.querySelector('.mid-third__tech-information div'),'Циферное отображение максимальной и текущей маны.'))
+document.querySelectorAll('.mid-third__tech-information div')[1].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-third__tech-information div')[1],'Количество заклинаний.'))
+document.querySelectorAll('.mid-third__tech-information div')[2].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-third__tech-information div')[2],'Скорость восстановление маны.'))
+document.querySelector('.mid-third__tech-add').addEventListener('mouseenter',setHint(document.querySelector('.mid-third__tech-add'),'Добавляет заклинание. Развлекайтесь :>'))
+document.querySelector('.mid-fourth__money div').addEventListener('mouseenter',setHint(document.querySelector('.mid-fourth__money div'),'Количество золотых монет.'))
+document.querySelectorAll('.mid-fourth__money div')[1].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-fourth__money div')[1],'Количество серебрянных монет.'))
+document.querySelectorAll('.mid-fourth__money div')[2].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-fourth__money div')[2],'Количество медных монет.'))
+document.querySelectorAll('.mid-fourth__money div')[3].addEventListener('mouseenter',setHint(document.querySelectorAll('.mid-fourth__money div')[3],'Общее количество монет в медных.'))
+document.querySelectorAll('.mid-fourth__equipment-item').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,'Ваше снаряжение по виду.'))
+})
+document.querySelectorAll('.mid-fourth__equipment-item textarea').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,'Описания надетого снаряжения.'))
+})
+document.querySelectorAll('.equipment-item__bonus').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,'Бонус что даёт ваше снаряжение.'))
+})
+document.querySelectorAll('.equipment-item__bonus-add').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,'Добавить бонус к снаряжению.'))
+})
+document.querySelector('.mid-fourth__inventory').addEventListener('mouseenter',setHint(document.querySelector('.mid-fourth__inventory'),'Опись вашего инвентаря.'))
+
+
+
+document.querySelectorAll('.hot-info__button')[1].click();
+
+
+function addHintsSpell(){
+    document.querySelectorAll('.spell-short__title').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Название вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-short__cost').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Минимальная стоимость каста вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-short__range').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Дальность вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-short__time').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Время накладывания вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-short__duration').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Длительность вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__title').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Название вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__school').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Школа/Тип вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__school').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Школа/Тип вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__cost').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Стоимость вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__cost').forEach(el=>{
+        el.querySelector('input').addEventListener('mouseenter',setHint(el.querySelector('input'),'Минимальная стоимость вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__cost').forEach(el=>{
+        el.querySelectorAll('input')[1].addEventListener('mouseenter',setHint(el.querySelectorAll('input')[1],'Максимальная стоимость вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__time').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Время накладывания вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__duration').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Длительность вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__range').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Дистанция вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__description').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Описание вашего заклинания.'))
+    })
+    document.querySelectorAll('.spell-long__delete').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Удалить ваше заклинание.'))
+    })
+    document.querySelectorAll('.spell-system__favourites').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Добавить/Убрать в избранное ваше заклинание.'))
+    })
+    document.querySelectorAll('.spell-system__change').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,' Показать/Свернуть описания вашего заклинания.'))
+    })
+}
+
+document.querySelectorAll('.bonus-list__item').forEach(el=>{
+    el.addEventListener('mouseenter',setHint(el,' Показать/Свернуть описания вашего заклинания.'))
+})
+
+function addHintsBonusEquipment(){
+    document.querySelectorAll('.bonus-list__item').forEach(el=>{
+        el.querySelector('select').addEventListener('mouseenter',setHint(el.querySelector('select'),'Тип бонуса что даёт ваше снаряжение.'))
+    })
+    document.querySelectorAll('.bonus-list__item').forEach(el=>{
+        el.querySelectorAll('select')[1].addEventListener('mouseenter',setHint(el.querySelectorAll('select')[1],' К чему даётся бонус.'))
+    })
+    document.querySelectorAll('.bonus-list__item').forEach(el=>{
+        el.querySelector('input').addEventListener('mouseenter',setHint(el.querySelector('input'),'Количества бонуса к снаряжению.'))
+    })
+    document.querySelectorAll('.item-bonus__list-checkbox-hover').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Активен ли ваш бонус.'))
+    })
+    document.querySelectorAll('.item-bonus__list-delete').forEach(el=>{
+        el.addEventListener('mouseenter',setHint(el,'Удалить бонус.'))
+    })
+}
+

@@ -58,16 +58,28 @@
     fill: black;
 }
 
-.mid-third__information{
+.mid-third__tech{
+    display: flex;
+    gap: 20px;
+}
+
+.mid-third__tech-information{
     border: 1px solid;
     border-radius: 10px;
     padding: 5px;
     display: flex;
     font-size: 18px;
     justify-content: space-between;
+    width: 100%;
 }
 
-.mid-third__information input{
+.mid-third__tech-information div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mid-third__tech-information input{
     width: 40px;
     height: 25px;
     outline: none;
@@ -80,8 +92,27 @@
     font-family: 'Segoe Script';
 }
 
-.mid-third__information input.active{
+.mid-third__tech-information input.active{
     background-color: white;
+}
+
+.mid-third__tech-add{
+    cursor: pointer;
+    transition: .4s;
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 18px;
+    max-width: 210px;
+    width: 100%;
+}
+
+.mid-third__tech-add:hover{
+    background-color: #2f2f2f;
+    color: white;
 }
 
 .mid-third__spell{

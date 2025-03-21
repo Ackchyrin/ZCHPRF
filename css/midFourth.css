@@ -37,6 +37,18 @@
     justify-content: space-between;
 }
 
+.money-coin__gold{
+    color: gold;
+}
+
+.money-coin__silver{
+    color: #9a9a9a ;
+}
+
+.money-coin__copper{
+    color:#B87333;
+}
+
 .mid-fourth__money div{
     display: flex;
     gap: 5px;
