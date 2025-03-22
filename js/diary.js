@@ -18,7 +18,13 @@ function addDiary(){
     </div>`)
     element = document.querySelectorAll('.diary-list__item')[document.querySelectorAll('.diary-list__item').length - 1]
     document.querySelector('.journal').insertAdjacentHTML('beforeend', `<div class="journal-item" data-collapsed="false">
-        <div class="journal-item__grab"></div>
+        <div class="journal-item__grab">
+            <svg width="20" height="10" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="1" x2="20" y2="1" stroke="black" stroke-width="1"/>
+                <line x1="5" y1="5" x2="15" y2="5" stroke="black" stroke-width="1"/>
+                <line x1="0" y1="9" x2="20" y2="9" stroke="black" stroke-width="1"/>
+            </svg>
+        </div>
         <div class="journal-item__info">
             <input class="journal-item__info-name" value="Дневник ${numberDiary}">
             <div class="journal-item__info-hidden">
@@ -237,7 +243,13 @@ function specialJournalSkillsAndSpecifications(){
         </div>`)
         element = document.querySelectorAll('.diary-list__item')[document.querySelectorAll('.diary-list__item').length - 1]
         document.querySelector('.journal').insertAdjacentHTML('beforeend', `<div class="journal-item" id="skilSpecJournal" data-collapsed="false">
-            <div class="journal-item__grab"></div>
+            <div class="journal-item__grab">
+                <svg width="20" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="1" x2="20" y2="1" stroke="black" stroke-width="1"/>
+                    <line x1="5" y1="5" x2="15" y2="5" stroke="black" stroke-width="1"/>
+                    <line x1="0" y1="9" x2="20" y2="9" stroke="black" stroke-width="1"/>
+                </svg>
+            </div>
             <div class="journal-item__info">
                 <input class="journal-item__info-name" value="Список избранных навыков и характеристик">
                 <div class="journal-item__info-hidden">
@@ -339,7 +351,13 @@ function specialJournalSpell(){
         </div>`)
         element = document.querySelectorAll('.diary-list__item')[document.querySelectorAll('.diary-list__item').length - 1]
         document.querySelector('.journal').insertAdjacentHTML('beforeend', `<div class="journal-item" id="spellJournal" data-collapsed="false">
-            <div class="journal-item__grab"></div>
+            <div class="journal-item__grab">
+                <svg width="20" height="10" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="1" x2="20" y2="1" stroke="black" stroke-width="1"/>
+                    <line x1="5" y1="5" x2="15" y2="5" stroke="black" stroke-width="1"/>
+                    <line x1="0" y1="9" x2="20" y2="9" stroke="black" stroke-width="1"/>
+                </svg>
+            </div>
             <div class="journal-item__info">
                 <input class="journal-item__info-name" value="Список избранных заклинаний">
                 <div class="journal-item__info-hidden">

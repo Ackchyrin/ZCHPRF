@@ -74,5 +74,5 @@ document.querySelector('#copperCalculation').addEventListener('change',()=>{
 })
 
 function calculationAllMoney(){
-    document.querySelectorAll('.mid-fourth__money span')[3].innerHTML = Number(document.querySelector('#gold').value*100) + Number(document.querySelector('#silver').value*10) + Number(document.querySelector('#copper').value)
+    document.querySelectorAll('.mid-fourth__money span')[6].innerHTML = Number(document.querySelector('#gold').value*100) + Number(document.querySelector('#silver').value*10) + Number(document.querySelector('#copper').value)
 }

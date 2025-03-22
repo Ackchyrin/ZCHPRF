@@ -15,6 +15,7 @@
     flex-direction: column;
     overflow: hidden;
     padding-bottom: 10px;
+    padding-top: 20px;
     min-width: 50px;
     min-height: 50px;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -23,9 +24,14 @@
 }
 
 .journal-item__grab{
-    min-height: 10px;
+    min-height: 20px;
     width: 100%;
     cursor: grab;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .journal-item__grab.grab{
