@@ -219,9 +219,8 @@ function loadFile(){
             if(val.favorites){
                 document.querySelector(`label[for="${key}"] .skills-item__favourites`).classList.add('active')
             }
-            val = val.value
             document.querySelector(`label[for="${key}"]`).querySelector('.skills-item__numbers-left').classList.remove('deactive')
-            for(let index = 0; index < val; index++){
+            for(let index = 0; index < val.value; index++){
                 setTimeout(() =>{
                     document.querySelector(`label[for="${key}"]`).querySelector('.skills-item__numbers-input').value = Number(document.querySelector(`label[for="${key}"]`).querySelector('.skills-item__numbers-input').value) + 1
                     if(Number(document.querySelector(`label[for="${key}"]`).querySelector('.skills-item__numbers-input').value) > Number(document.querySelector(`label[for="${key}"]`).querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))){
@@ -254,14 +253,13 @@ function loadFile(){
         document.querySelectorAll('.specifications-item__numbers-divider').forEach(el=>el.innerText = '/' + 2)
         document.querySelectorAll('.specifications-item__square-main div').forEach(el=>el.style.width = 100+"%")
         document.querySelectorAll('.specifications-item__square-main.one div').forEach(el=>el.style.width = 0)
-        document.querySelectorAll('.specifications-item__numbers-left').forEach(el=>el.classList.add('deactive'))
+        document.querySelectorAll('.specifications-item__numbers-left').forEach(el=>el.classList.add('deactive'))        
         Object.entries(jsonData['specifications']).forEach(([key, val]) =>{
             if(val.favorites){
                 document.querySelector(`label[for="${key}"] .specifications-item__favourites`).classList.add('active')
             }
-            val = val.value
             document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-left').classList.remove('deactive')
-            for(let index = 0; index < val; index++){
+            for(let index = 0; index < val.value; index++){
                 setTimeout(() =>{
                     document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-input').value = Number(document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-input').value) + 1
                     if(Number(document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-input').value) > Number(document.querySelector(`label[for="${key}"]`).querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))){
@@ -298,7 +296,7 @@ function loadFile(){
                 colMana()
                 setManaMagic()
             }, index*50)
-        }        
+        }
         Object.entries(jsonData['spell']).forEach(([key, val]) =>{
             document.querySelector('.mid-third').insertAdjacentHTML('beforeend',`
                 <div class="mid-third__spell">
@@ -492,7 +490,6 @@ function loadFile(){
                     </svg>
                 </div>
             </div>`)
-            console.log(val.text);
             commonCss = `width: ${val.width}px; height: ${val.height}px; left: ${val.left}px; top: ${val.top}px;`
             element = document.querySelectorAll('.diary-list__item')[document.querySelectorAll('.diary-list__item').length - 1]
             document.querySelector('.journal').insertAdjacentHTML('beforeend', `<div class="journal-item" data-collapsed="false" style="${commonCss}">

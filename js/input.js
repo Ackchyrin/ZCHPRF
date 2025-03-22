@@ -11,3 +11,9 @@ document.querySelectorAll('.number-only').forEach(input =>{
         this.value = this.value.replace(/[^0-9]/g, '')
     })
 })
+
+document.querySelectorAll('.number-only__fractional').forEach(input =>{
+    input.addEventListener('input', function(){
+        this.value = this.value.replace(/[^0-9.]/g, '')
+    })
+})
