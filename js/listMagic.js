@@ -82,7 +82,7 @@ function addSpell(){
                         <option>Стихийная</option>
                         <option>Витральная</option>
                         <option>Иллюзорная</option>
-                        <option>Астральная</option>
+                        <option>Колдовская</option>
                         <option>Рунная</option>
                         <option>Уникальная</option>
                     </select>

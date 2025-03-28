@@ -197,8 +197,8 @@ function loadFile(){
             input.value = ''
             const text = field.data
             function typeWriter(){
-                if(textTime < text.length*50){
-                    textTime = text.length*50
+                if(textTime < text.length*10){
+                    textTime = text.length*10
                 }
                 if(i < text.length){
                     input.value += text.charAt(i)
@@ -207,7 +207,7 @@ function loadFile(){
                     clearInterval(interval)
                 }
             }
-            const interval = setInterval(typeWriter, 50)
+            const interval = setInterval(typeWriter, 10)
         })
         document.querySelectorAll('.skills-item__numbers-input').forEach(el=>el.value = '')
         document.querySelectorAll('.skills-item__square span').forEach(el=>el.innerText = 0)
@@ -319,7 +319,7 @@ function loadFile(){
                                 <option>Стихийная</option>
                                 <option>Витральная</option>
                                 <option>Иллюзорная</option>
-                                <option>Астральная</option>
+                                <option>Колдовская</option>
                                 <option>Рунная</option>
                                 <option>Уникальная</option>
                             </select>
