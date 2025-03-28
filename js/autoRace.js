@@ -81,7 +81,7 @@ function autoRace(){
         }
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'фелины'){
+    if(document.querySelector('#species').value.toLowerCase() == 'фелин'){
         dataRace = {
             "strength": 2,
             "dexterity": 9,
@@ -125,7 +125,7 @@ function autoRaceCommon(){
         globalCommonSpecifications = 34
     }
 
-    if(document.querySelector('#species').value.toLowerCase() == 'фелины'){
+    if(document.querySelector('#species').value.toLowerCase() == 'фелин'){
         globalCommonSpecifications = 35
     }
 
