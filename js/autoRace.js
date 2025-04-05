@@ -128,7 +128,6 @@ function autoRaceCommon(){
     if(document.querySelector('#species').value.toLowerCase() == 'фелин'){
         globalCommonSpecifications = 35
     }
-
 }
 
 function autoRaceSpecigication(){

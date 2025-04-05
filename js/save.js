@@ -59,6 +59,7 @@ function saveFile(){
     dataCharacter['name'] = document.querySelector('#name').value
     dataCharacter['character'] = document.querySelector('#character').value
     dataCharacter['species'] = document.querySelector('#species').value
+    dataCharacter['class'] = document.querySelector('#class').value
     dataCharacter['features'] = document.querySelector('#features').value
     dataCharacter['abilities'] = document.querySelector('#abilities').value
     dataCharacter['beauty'] = document.querySelector('#beauty').value
@@ -86,6 +87,11 @@ function saveFile(){
     dataCharacter['silver'] = document.querySelector('#silver').value
     dataCharacter['copper'] = document.querySelector('#copper').value
     dataCharacter['inventory'] = document.querySelector('#inventory').value
+    dataCharacter['health'] = healthAdd
+    dataCharacter['healthy'] = healthyAdd
+    dataCharacter['armor'] = armorAdd
+    dataCharacter['evasion'] = evasionAdd
+    dataCharacter['initiative'] = initiativeAdd
     document.querySelectorAll('.mid-fourth__equipment-item').forEach((el,index)=>{
         dataCharacter['equipment'][index] = {}
         dataCharacter['equipment'][index]['text'] = el.querySelector('textarea').value
@@ -161,9 +167,10 @@ function loadFile(){
         document.querySelector('#eyesColor').value = jsonData['eyesColor']
         setColor()
         const fields = [
-            {selector: '#name', data: jsonData['name'] },
+            {selector: '#name', data: jsonData['name']},
             {selector: '#character', data: jsonData['character']},
             {selector: '#species', data: jsonData['species']},
+            {selector: '#class', data: jsonData['class']},
             {selector: '#features', data: jsonData['features']},
             {selector: '#abilities', data: jsonData['abilities']},
             {selector: '#beauty', data: jsonData['beauty']},
@@ -190,6 +197,9 @@ function loadFile(){
             {selector: "#silver", data: jsonData['silver']},
             {selector: "#copper", data: jsonData['copper']},
             {selector: "#inventory", data: jsonData['inventory']},
+            {selector: "#armor", data: jsonData['armor']},
+            {selector: "#evasion", data: jsonData['evasion']},
+            {selector: "#initiative", data: jsonData['initiative']},
         ]
         fields.forEach(field => {
             let i = 0
@@ -408,6 +418,10 @@ function loadFile(){
                             </select>
                             <select>
                                 <option>Мана</option>
+                                <option>Здоровье</option>
+                                <option>Броня</option>
+                                <option>Уклонение</option>
+                                <option>Инициатива</option>
                                 <option>Ближний бой</option>
                                 <option>Дальний бой</option>
                                 <option>Акробатика</option>
@@ -443,7 +457,7 @@ function loadFile(){
                     `)
                     document.querySelectorAll('.number-only').forEach(input =>{
                         input.addEventListener('input', function(){
-                            this.value = this.value.replace(/[^0-9]/g, '')
+                            this.value = this.value.replace(/[^0-9-]/g, '')
                         })
                     })
                     element = elem.querySelectorAll('.equipment-item__bonus-list .bonus-list__item')[k]
@@ -534,9 +548,13 @@ function loadFile(){
             if(val.hidden){
                 elem.querySelector('.journal-item__info-hidden').click()
             }
-        })        
+        })
+        healthAdd = jsonData['health']
+        healthyAdd = jsonData['healthy']
+        armorAdd = jsonData['armor']
+        evasionAdd = jsonData['evasion']
+        initiativeAdd = jsonData['initiative']  
     }
-
     setTimeout(() =>{
         if(textTime > 2000 || textTime > 2000 || specificationsTime > 2000){
             setInterval(() =>{
@@ -546,6 +564,7 @@ function loadFile(){
                 addHintsDiary()
                 specialJournalSpell()
                 specialJournalSkillsAndSpecifications()
+                setHealth()
                 modal.innerText = 'Успешно загружен'
                 setTimeout(() =>{
                     modal.classList.remove('active')
@@ -561,6 +580,7 @@ function loadFile(){
             addHintsDiary()
             specialJournalSpell()
             specialJournalSkillsAndSpecifications()
+            setHealth()
             modal.innerText = 'Успешно загружен'
             setTimeout(() =>{
                 modal.classList.remove('active')

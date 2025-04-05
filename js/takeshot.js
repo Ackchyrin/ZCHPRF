@@ -30,6 +30,13 @@ function takeshot(){
     document.querySelector('.mid-fourth__inventory textarea').style.display = 'none'
     document.querySelector('.mid-fourth__inventory div').innerHTML = document.querySelector('.mid-fourth__inventory textarea').value
     document.querySelectorAll('.mid-info__item-input').forEach(el=>el.classList.add('hidden'))
+    document.querySelectorAll('.personality-hidden').forEach(el=>el.classList.add('active'))
+    document.querySelector('.personality-health').classList.add('takeShot')
+    document.querySelector('.personality-healthy').classList.add('takeShot')
+    document.querySelector('.personality-armor').classList.add('takeShot')
+    document.querySelector('.personality-evasion').classList.add('takeShot')
+    document.querySelector('.personality-initiative').classList.add('takeShot')
+    document.querySelectorAll('.special-mana__button').forEach(el=>el.classList.add('deactive'))
     document.querySelectorAll('.mid-character').forEach(el=>{
         el.querySelector('div').style.display = 'block'
         el.querySelector('.mid-character__text').style.display = 'none'
@@ -111,6 +118,13 @@ function download(canvas, filename) {
     document.querySelector('.mid-fourth__inventory div').style.display = 'none'
     document.querySelector('.mid-fourth__inventory textarea').style.display = 'block'
     document.querySelectorAll('.mid-info__item-input').forEach(el=>el.classList.remove('hidden'))
+    document.querySelectorAll('.personality-hidden').forEach(el=>el.classList.remove('active'))
+    document.querySelector('.personality-health').classList.remove('takeShot')
+    document.querySelector('.personality-healthy').classList.remove('takeShot')
+    document.querySelector('.personality-armor').classList.remove('takeShot')
+    document.querySelector('.personality-evasion').classList.remove('takeShot')
+    document.querySelector('.personality-initiative').classList.remove('takeShot')
+    document.querySelectorAll('.special-mana__button').forEach(el=>el.classList.remove('deactive'))
     document.querySelectorAll('.mid-character').forEach(el=>{
         el.querySelector('div').style.display = 'none'
         el.querySelector('.mid-character__text').style.display = 'block'

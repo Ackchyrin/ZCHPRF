@@ -19,6 +19,10 @@ function addBonus(x){
                 </select>
                 <select>
                     <option>Мана</option>
+                    <option>Здоровье</option>
+                    <option>Броня</option>
+                    <option>Уклонение</option>
+                    <option>Инициатива</option>
                     <option>Ближний бой</option>
                     <option>Дальний бой</option>
                     <option>Акробатика</option>
@@ -54,7 +58,7 @@ function addBonus(x){
         `)
         document.querySelectorAll('.number-only').forEach(input =>{
             input.addEventListener('input', function(){
-                this.value = this.value.replace(/[^0-9]/g, '')
+                this.value = this.value.replace(/[^0-9-]/g, '')
             })
         })
         element = x.querySelectorAll('.equipment-item__bonus-list .bonus-list__item')[x.querySelectorAll('.equipment-item__bonus-list .bonus-list__item').length -1]
@@ -136,7 +140,7 @@ function setBonusAll(x){
                 deleteManaBonus()
             }
         }
-        if(x.querySelector('select').value == 'Опыт' && x.querySelectorAll('select')[1].value != 'Мана'){
+        if(x.querySelector('select').value == 'Опыт' && x.querySelectorAll('select')[1].value != 'Мана' && x.querySelectorAll('select')[1].value != 'Здоровье' && x.querySelectorAll('select')[1].value != 'Броня' && x.querySelectorAll('select')[1].value != 'Уклонение' && x.querySelectorAll('select')[1].value != 'Инициатива'){
             document.querySelectorAll('.skills-item').forEach(el=>{
                 if(el.querySelector('.skills-item__title').innerText == x.querySelectorAll('select')[1].value && x.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
                     for(let index = 1; index <= x.querySelector('input').value; index++){
@@ -269,7 +273,7 @@ function setBonusAll(x){
                     }
                 }
             })
-        }else if(x.querySelector('select').value == 'Пункт' && x.querySelectorAll('select')[1].value != 'Мана'){
+        }else if(x.querySelector('select').value == 'Пункт' && x.querySelectorAll('select')[1].value != 'Мана' && x.querySelectorAll('select')[1].value != 'Здоровье' && x.querySelectorAll('select')[1].value != 'Броня' && x.querySelectorAll('select')[1].value != 'Уклонение' && x.querySelectorAll('select')[1].value != 'Инициатива'){
             document.querySelectorAll('.skills-item').forEach(el=>{
                 if(el.querySelector('.skills-item__title').innerText == x.querySelectorAll('select')[1].value && x.querySelector('.item-bonus__list-checkbox').classList.contains('active')){
                     colPoint = 0
@@ -422,6 +426,7 @@ function setBonusAll(x){
         setMana()
         setAdvantage()
         setSpentInventory()
+        setHealthAll()
     }
 }
 

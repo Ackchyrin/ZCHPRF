@@ -174,6 +174,100 @@
                 </label>
                 <input class="mid-info__item-input" id="species">
             </div>
+            <div class="mid-info__item">
+                <label class="mid-info__item-title" for="class">
+                    Класс:
+                </label>
+                <input class="mid-info__item-input" id="class">
+            </div>
+        </div>
+        <div class="personality">
+            <div class="personality-health">
+                Очки здоровья
+                <div class="personality-health__container">
+                    <div class="personality-health__container-left personality-hidden" onclick="removeHealth()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                    <input class="personality-health__container-number number-only personality-hidden" id="health">
+                    <div class="personality-health__container-right personality-hidden" onclick="addHealth()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                            <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="personality-healthy">
+                Текущее ОЗ
+                <div class="personality-healthy__container">
+                    <div class="personality-healthy__container-left personality-hidden" onclick="removeHealthy()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                    <input class="personality-healthy__container-number number-only personality-hidden" id="healthy">
+                    <div class="personality-healthy__container-right personality-hidden" onclick="addHealthy()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                            <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="personality-armor">
+                Очки брони
+                <div class="personality-armor__container">
+                    <div class="personality-armor__container-left personality-hidden" onclick="removeArmor()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                    <input class="personality-armor__container-number number-only personality-hidden" id="armor">
+                    <div class="personality-armor__container-right personality-hidden" onclick="addArmor()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                            <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="personality-evasion">
+                Уклонение
+                <div class="personality-evasion__container">
+                    <div class="personality-evasion__container-left personality-hidden" onclick="removeEvasion()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                    <input class="personality-evasion__container-number number-only personality-hidden" id="evasion">
+                    <div class="personality-evasion__container-right personality-hidden" onclick="addEvasion()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                            <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="personality-initiative">
+                Инициатива
+                <div class="personality-initiative__container">
+                    <div class="personality-initiative__container-left personality-hidden" onclick="removeInitiative()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                    <input class="personality-initiative__container-number number-only personality-hidden" id="initiative">
+                    <div class="personality-initiative__container-right personality-hidden" onclick="addInitiative()">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
+                            <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            
         </div>
         <div class="special">
             <label class="special-inspiration" for="inspiration">
@@ -1604,7 +1698,7 @@
                 Ссылка на документацию по составлению персонажа
             </a>
             <a href="https://github.com/Ackchyrin/ZCHPRF" target="_blank" class="footer__data-version">
-                GIT Версия: 2.0 RELIS
+                GIT Версия: 2.1 RELIS
             </a>
             <div class="footer__data-date">
                 @2025
@@ -1633,4 +1727,5 @@
     <script src="./js/equipment.js"></script>
     <script src="./frame/html2canvas.min.js"></script>
     <script src="./js/diary.js"></script>
+    <script src="./js/personality.js"></script>
 </html>

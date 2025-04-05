@@ -35,7 +35,7 @@
 .mid-info__item{
     display: flex;
     gap: 5px;
-    width: 31%;
+    width: 24%;
     align-items: center;
 }
 
@@ -56,6 +56,121 @@
 
 .mid-info__item-input.hidden{
     border: none;
+}
+
+.personality{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.personality-health.takeShot,
+.personality-healthy.takeShot,
+.personality-armor.takeShot,
+.personality-evasion.takeShot,
+.personality-initiative.takeShot{
+    padding-bottom: 45px;
+}
+
+.personality-health,
+.personality-healthy,
+.personality-armor,
+.personality-evasion,
+.personality-initiative{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 10px 35px;
+}
+
+.personality-health__container,
+.personality-healthy__container,
+.personality-armor__container,
+.personality-evasion__container,
+.personality-initiative__container{
+    display: flex;
+    gap: 10px;
+}
+
+.personality-health__container input,
+.personality-healthy__container input,
+.personality-armor__container input,
+.personality-evasion__container input,
+.personality-initiative__container input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid;
+    width: 50px;
+    font-size: 22px;
+    font-family: 'Segoe Script';
+    text-align: center;
+    border-color: black;
+    pointer-events: none;
+}
+
+.personality-health__container-left,
+.personality-health__container-right,
+.personality-healthy__container-left,
+.personality-healthy__container-right,
+.personality-armor__container-left,
+.personality-armor__container-right,
+.personality-evasion__container-left,
+.personality-evasion__container-right,
+.personality-initiative__container-left,
+.personality-initiative__container-right{
+    border: 1px solid;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    height: fit-content;
+    transition: .4s;
+}
+
+.personality-health__container-left:hover,
+.personality-health__container-right:hover,
+.personality-healthy__container-left:hover,
+.personality-healthy__container-right:hover,
+.personality-armor__container-left:hover,
+.personality-armor__container-right:hover,
+.personality-evasion__container-left:hover,
+.personality-evasion__container-right:hover,
+.personality-initiative__container-left:hover,
+.personality-initiative__container-right:hover{
+    background-color: #2f2f2f;
+}
+
+.personality-health__container-left svg line,
+.personality-health__container-right svg line,
+.personality-healthy__container-left svg line,
+.personality-healthy__container-right svg line,
+.personality-armor__container-left svg line,
+.personality-armor__container-right svg line,
+.personality-evasion__container-left svg line,
+.personality-evasion__container-right svg line,
+.personality-initiative__container-left svg line,
+.personality-initiative__container-right svg line{
+    transition: .4s;
+}
+
+.personality-health__container-left:hover svg line,
+.personality-health__container-right:hover svg line,
+.personality-healthy__container-left:hover svg line,
+.personality-healthy__container-right:hover svg line,
+.personality-armor__container-left:hover svg line,
+.personality-armor__container-right:hover svg line,
+.personality-evasion__container-left:hover svg line,
+.personality-evasion__container-right:hover svg line,
+.personality-initiative__container-left:hover svg line,
+.personality-initiative__container-right:hover svg line{
+    stroke: white;
+}
+
+.personality-hidden.active{
+    display: none;
 }
 
 .special{
@@ -140,6 +255,10 @@
     padding: 4px;
     height: fit-content;
     transition: .4s;
+}
+
+.special-mana__button.deactive{
+    display: none;
 }
 
 .special-mana__button:hover{

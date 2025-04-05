@@ -50,6 +50,7 @@ document.querySelectorAll('.specifications-item').forEach(el=>{
                         }
                     }
                     setMana()
+                    setHealth()
                     setAdvantage()
                     calculateSpent()
                 }, index * 100);
@@ -99,6 +100,7 @@ function countingspecifications(x){
     }
     calculateSpent()
     setAdvantage()
+    setHealth()
     document.querySelectorAll('.specifications-item__favourites').forEach(el=>{
         if(el.classList.contains('active')){
             specialJournalSkillsAndSpecifications()

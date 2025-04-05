@@ -96,6 +96,7 @@
     padding: 10px;
     cursor: pointer;
     min-width: 299px;
+    position: relative;
 }
 
 .mid-fourth__equipment-item textarea{
