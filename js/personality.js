@@ -256,3 +256,5 @@ function removeInitiative(){
     initiativeAdd -= 1
     setInitiativeAll()
 }
+
+document.querySelector('#class').addEventListener('input',setHealth)

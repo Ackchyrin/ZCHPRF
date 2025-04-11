@@ -93,6 +93,7 @@ function autoRace(){
     }
     
     autoRaceSpecigication()
+    setHealth()
 }
 
 function autoRaceCommon(){
