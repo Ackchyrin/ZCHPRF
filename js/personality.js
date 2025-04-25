@@ -232,7 +232,7 @@ function addEvasion(){
     setEvasionAll()
 }
 
-function removeArmor(){
+function removeEvasion(){
     evasionAdd -= 1
     setEvasionAll()
 }
