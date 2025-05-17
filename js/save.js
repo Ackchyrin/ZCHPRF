@@ -164,7 +164,10 @@ function loadFile(){
         const jsonData = JSON.parse(event.target.result)
         document.querySelector('#hairColor').value = jsonData['hairColor']
         document.querySelector('#skinColor').value = jsonData['skinColor']
-        document.querySelector('#eyesColor').value = jsonData['eyesColor']
+        document.querySelector('#eyesColor').value = jsonData['eyesColor']        
+        document.querySelector('#evasion').value = jsonData['evasion']        
+        document.querySelector('#initiative').value = jsonData['initiative']
+        document.querySelector('#armor').value = jsonData['armor']
         setColor()
         const fields = [
             {selector: '#name', data: jsonData['name']},
@@ -197,9 +200,6 @@ function loadFile(){
             {selector: "#silver", data: jsonData['silver']},
             {selector: "#copper", data: jsonData['copper']},
             {selector: "#inventory", data: jsonData['inventory']},
-            {selector: "#armor", data: jsonData['armor']},
-            {selector: "#evasion", data: jsonData['evasion']},
-            {selector: "#initiative", data: jsonData['initiative']},
         ]
         fields.forEach(field => {
             let i = 0
