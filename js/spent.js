@@ -17,7 +17,7 @@ function calculateSpent(){
         }
         document.querySelectorAll('.spent-data')[index+1].querySelector('span').innerText = colSingl - skillInventory
     })
-    document.querySelector('.spent-data span').innerText = colCommon-colSkillInventory
+    document.querySelector('.spent-data span').innerText = colCommon - colSkillInventory
     autoRaceCommon()
     colCommon = 0
     colRace = 0
@@ -65,11 +65,11 @@ function calculateSpent(){
             colRace = 0
         }
         skillInventory = 0        
-        if(colSpentInventory[document.querySelectorAll('.spent-data')[index+11].innerText.replace(/: \d+$/, '')] != undefined){
-            skillInventory = colSpentInventory[document.querySelectorAll('.spent-data')[index+11].innerText.replace(/: \d+$/, '')]
+        if(colSpentInventory[document.querySelectorAll('.spent-data')[index+12].innerText.replace(/: \d+$/, '')] != undefined){
+            skillInventory = colSpentInventory[document.querySelectorAll('.spent-data')[index+12].innerText.replace(/: \d+$/, '')]
         }        
-        document.querySelectorAll('.spent-data span')[index+11].innerText = colSingl-1-colRace-skillInventory
+        document.querySelectorAll('.spent-data span')[index+12].innerText = colSingl-1-colRace-skillInventory
     })
-    document.querySelectorAll('.spent-data span')[10].innerText = colCommon-6-globalCommonSpecifications-colSpecificationsInventory
+    document.querySelectorAll('.spent-data span')[11].innerText = colCommon-6-globalCommonSpecifications-colSpecificationsInventory
     setMana()
 }
