@@ -12,10 +12,10 @@ function calculateSpent(){
             colSingl = inputValue
         }
         skillInventory = 0
-        if(colSpentInventory[document.querySelectorAll('.spent-data')[index+1].innerText.replace(/: \d+$/, '')] != undefined){
+        if(colSpentInventory[document.querySelectorAll('.spent-data')[index].innerText.replace(/: \d+$/, '')] != undefined){
             skillInventory = colSpentInventory[document.querySelectorAll('.spent-data')[index+1].innerText.replace(/: \d+$/, '')]
         }
-        document.querySelectorAll('.spent-data span')[index+1].innerText = colSingl - skillInventory
+        document.querySelectorAll('.spent-data span')[index].innerText = colSingl - skillInventory
     })
     document.querySelector('.spent-data span').innerText = colCommon-colSkillInventory
     autoRaceCommon()
