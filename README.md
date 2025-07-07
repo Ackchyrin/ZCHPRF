@@ -1,3 +1,5 @@
+ЗЧПРФ - заполнитель чарников в полуручном формате
+
 Проект создан для создания чарников персонажей по схожей с dnd механикой.  
 Текущая актуальная версия 2.1 
 Версия релиза 2.1
@@ -8,3 +10,6 @@ https://ackchyrin.github.io/ZCHPRF/
 Или через кнопку релиз найти последнию актуальную версию.  
   
 https://github.com/Ackchyrin/ZCHPRF/releases  
+
+Так же есть документация системы ПОБ
+https://docs.google.com/document/d/1JA_9GWh6ilwM6tdC9Gf_873bIx83505W2D6G11B49qw/edit?tab=t.xvbix4cvloac
