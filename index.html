@@ -189,13 +189,13 @@
             <div class="personality-health">
                 Очки здоровья
                 <div class="personality-health__container">
-                    <div class="personality-health__container-left personality-hidden" onclick="removeHealth()">
+                    <div class="personality-health__container-left personality-hidden">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
                         </svg>
                     </div>
                     <input class="personality-health__container-number number-only personality-hidden" id="health">
-                    <div class="personality-health__container-right personality-hidden" onclick="addHealth()">
+                    <div class="personality-health__container-right personality-hidden">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
                             <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
@@ -205,14 +205,17 @@
             </div>
             <div class="personality-healthy">
                 Текущее ОЗ
+                <svg class="personality-healthy__healt" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5.50054L11.4596 6.02064C11.601 6.16754 11.7961 6.25054 12 6.25054C12.2039 6.25054 12.399 6.16754 12.5404 6.02064L12 5.50054ZM9.42605 18.3218C7.91039 17.127 6.25307 15.9602 4.93829 14.4797C3.64922 13.0281 2.75 11.3344 2.75 9.13701H1.25C1.25 11.8025 2.3605 13.836 3.81672 15.4757C5.24723 17.0865 7.07077 18.3751 8.49742 19.4998L9.42605 18.3218ZM2.75 9.13701C2.75 6.98614 3.96537 5.18243 5.62436 4.4241C7.23607 3.68739 9.40166 3.88249 11.4596 6.02064L12.5404 4.98044C10.0985 2.44343 7.26409 2.0253 5.00076 3.05987C2.78471 4.07283 1.25 6.42494 1.25 9.13701H2.75ZM8.49742 19.4998C9.00965 19.9036 9.55954 20.3342 10.1168 20.6598C10.6739 20.9853 11.3096 21.2499 12 21.2499V19.7499C11.6904 19.7499 11.3261 19.6292 10.8736 19.3647C10.4213 19.1004 9.95208 18.7365 9.42605 18.3218L8.49742 19.4998ZM15.5026 19.4998C16.9292 18.3751 18.7528 17.0865 20.1833 15.4757C21.6395 13.836 22.75 11.8025 22.75 9.13701H21.25C21.25 11.3344 20.3508 13.0281 19.0617 14.4797C17.7469 15.9602 16.0896 17.127 14.574 18.3218L15.5026 19.4998ZM22.75 9.13701C22.75 6.42494 21.2153 4.07283 18.9992 3.05987C16.7359 2.0253 13.9015 2.44343 11.4596 4.98044L12.5404 6.02064C14.5983 3.88249 16.7639 3.68739 18.3756 4.4241C20.0346 5.18243 21.25 6.98614 21.25 9.13701H22.75ZM14.574 18.3218C14.0479 18.7365 13.5787 19.1004 13.1264 19.3647C12.6739 19.6292 12.3096 19.7499 12 19.7499V21.2499C12.6904 21.2499 13.3261 20.9853 13.8832 20.6598C14.4405 20.3342 14.9903 19.9036 15.5026 19.4998L14.574 18.3218Z" fill="black"/>
+                </svg>
                 <div class="personality-healthy__container">
-                    <div class="personality-healthy__container-left personality-hidden" onclick="removeHealthy()">
+                    <div class="personality-healthy__container-left personality-hidden">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
                         </svg>
                     </div>
                     <input class="personality-healthy__container-number number-only personality-hidden" id="healthy">
-                    <div class="personality-healthy__container-right personality-hidden" onclick="addHealthy()">
+                    <div class="personality-healthy__container-right personality-hidden">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <line x1="5" y1="12.5" x2="20" y2="12.5" stroke="black" stroke-width="2"></line>
                             <line x1="12.5" y1="5" x2="12.5" y2="20" stroke="black" stroke-width="2"></line>
@@ -301,7 +304,12 @@
         <div class="skills">
             <label class="skills-item" for="melee">
                 <div class="skills-item__title">
-                    Ближний бой
+                    <div class="skills-item__title-text">
+                        Ближний бой
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -351,7 +359,12 @@
             </label>
             <label class="skills-item" for="ranger">
                 <div class="skills-item__title">
-                    Дальний бой
+                    <div class="skills-item__title-text">
+                        Дальний бой
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -401,7 +414,12 @@
             </label>
             <label class="skills-item" for="acrobatics">
                 <div class="skills-item__title">
-                    Акробатика
+                    <div class="skills-item__title-text">
+                        Акробатика
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -451,7 +469,12 @@
             </label>
             <label class="skills-item" for="defense">
                 <div class="skills-item__title">
-                    Защита
+                    <div class="skills-item__title-text">
+                        Защита
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -501,7 +524,12 @@
             </label>
             <label class="skills-item" for="magic">
                 <div class="skills-item__title">
-                    Магия
+                    <div class="skills-item__title-text">
+                        Магия
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -551,7 +579,12 @@
             </label>
             <label class="skills-item" for="alchemy">
                 <div class="skills-item__title">
-                    Алхимия
+                    <div class="skills-item__title-text">
+                        Алхимия
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -601,7 +634,12 @@
             </label>
             <label class="skills-item" for="medicine">
                 <div class="skills-item__title">
-                    Медицина
+                    <div class="skills-item__title-text">
+                        Медицина
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -651,7 +689,12 @@
             </label>
             <label class="skills-item" for="survival">
                 <div class="skills-item__title">
-                    Выживание
+                    <div class="skills-item__title-text">
+                        Выживание
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -701,7 +744,12 @@
             </label>
             <label class="skills-item" for="speech">
                 <div class="skills-item__title">
-                    Красноречие
+                    <div class="skills-item__title-text">
+                        Красноречие
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -751,7 +799,12 @@
             </label>
             <label class="skills-item" for="thief">
                 <div class="skills-item__title">
-                    Навыки вора
+                    <div class="skills-item__title-text">
+                        Навыки вора
+                    </div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.56066 20.2501L20.5607 8.25011L15.75 3.43945L3.75 15.4395V20.2501H8.56066ZM15.75 5.56077L18.4394 8.25011L16.5 10.1895L13.8107 7.50013L15.75 5.56077ZM12.75 8.56079L15.4394 11.2501L7.93934 18.7501H5.25V16.0608L12.75 8.56079Z" fill="black"/>
+                    </svg>
                 </div>
                 <div class="skills-item__square">
                     <div class="skills-item__square-main one">
@@ -1702,34 +1755,35 @@
                 Ссылка на систему ПОБ
             </a>
             <a href="https://github.com/Ackchyrin/ZCHPRF" target="_blank" class="footer__data-version">
-                GIT Версия: 2.1 SPECIFIFICATION BASIS
+                GIT Версия: 2.2 SKILLS EDIT
             </a>
             <div class="footer__data-date">
                 @2025
             </div>
         </div>
     </footer>
-    </body>
     <div id="output"></div>
     <div class="modal"></div>
     <div class="hints hiden"></div>
     <div class="journal"></div>
-    <script src="./js/main.js"></script>
-    <script src="./js/mana.js"></script>
-    <script src="./js/input.js"></script>
-    <script src="./js/skills.js"></script>
-    <script src="./js/specifications.js"></script>
-    <script src="./js/spent.js"></script>
-    <script src="./js/takeshot.js"></script>
-    <script src="./js/hints.js"></script>
-    <script src="./js/hot.js"></script>
-    <script src="./js/save.js"></script>
-    <script src="./js/character.js"></script>
-    <script src="./js/autoRace.js"></script>
-    <script src="./js/listMagic.js"></script>
-    <script src="./js/money.js"></script>
-    <script src="./js/equipment.js"></script>
-    <script src="./frame/html2canvas.min.js"></script>
-    <script src="./js/diary.js"></script>
-    <script src="./js/personality.js"></script>
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/mana.js"></script>
+    <script defer src="./js/input.js"></script>
+    <script defer src="./js/skills.js"></script>
+    <script defer src="./js/specifications.js"></script>
+    <script defer src="./js/spent.js"></script>
+    <script defer src="./js/takeshot.js"></script>
+    <script defer src="./js/hints.js"></script>
+    <script defer src="./js/hot.js"></script>
+    <script defer src="./js/save.js"></script>
+    <script defer src="./js/character.js"></script>
+    <script defer src="./js/autoRace.js"></script>
+    <script defer src="./js/listMagic.js"></script>
+    <script defer src="./js/money.js"></script>
+    <script defer src="./js/equipment.js"></script>
+    <script defer src="./frame/html2canvas.min.js"></script>
+    <script defer src="./js/diary.js"></script>
+    <script defer src="./js/personality.js"></script>
+    <script defer src="./js/editSkills.js"></script>
+</body>
 </html>

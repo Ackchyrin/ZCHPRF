@@ -83,6 +83,7 @@
     flex-direction: column;
     border: 1px solid;
     padding: 10px 35px;
+    position: relative;
 }
 
 .personality-health__container,
@@ -167,6 +168,21 @@
 .personality-initiative__container-left:hover svg line,
 .personality-initiative__container-right:hover svg line{
     stroke: white;
+}
+
+.personality-healthy__healt{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.personality-healthy__healt path{
+    transition: .4s;
+}
+
+.personality-healthy__healt:hover path{
+    fill: red;
 }
 
 .personality-hidden.active{
@@ -302,6 +318,11 @@
 }
 
 .skills-item__title{
+    display: flex;
+    gap: 10px;
+}
+
+.skills-item__title-text{
     font-size: 18px;
 }
 

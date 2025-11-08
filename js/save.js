@@ -4,6 +4,7 @@ dataCharacter['specifications'] = {}
 dataCharacter['spell'] = {}
 dataCharacter['equipment'] = {}
 dataCharacter['diary'] = {}
+dataCharacter['skillsName'] = {}
 
 document.getElementById('fileInput').addEventListener('change', loadFile)
 
@@ -123,6 +124,9 @@ function saveFile(){
             dataCharacter['diary'][index]['top'] = document.querySelectorAll('.journal-item')[index].getBoundingClientRect().top
         }
     })
+    document.querySelectorAll('.skills-item').forEach(el=>{
+        dataCharacter['skillsName'][el.getAttribute('for')] = el.querySelector('.skills-item__title-text').innerHTML
+    })
     currentdate = new Date()
     day = currentdate.getDate()
     month = currentdate.getMonth() + 1
@@ -219,6 +223,10 @@ function loadFile(){
             }
             const interval = setInterval(typeWriter, 10)
         })
+        Object.entries(jsonData['skillsName']).forEach(([key, val]) =>{
+            document.querySelector('.skills-item[for="'+key+'"]').querySelector('.skills-item__title-text').innerHTML = val
+        })
+        editMoreSkillsName()
         document.querySelectorAll('.skills-item__numbers-input').forEach(el=>el.value = '')
         document.querySelectorAll('.skills-item__square span').forEach(el=>el.innerText = 0)
         document.querySelectorAll('.skills-item__square span').forEach(el=>el.style.color = 'black')
@@ -455,6 +463,7 @@ function loadFile(){
                             </div>
                         </div>
                     `)
+                    editMoreSkillsName()
                     document.querySelectorAll('.number-only').forEach(input =>{
                         input.addEventListener('input', function(){
                             this.value = this.value.replace(/[^0-9-]/g, '')

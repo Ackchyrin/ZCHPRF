@@ -258,3 +258,46 @@ function removeInitiative(){
 }
 
 document.querySelector('#class').addEventListener('input',setHealth)
+
+function startHold(action){
+  action()
+  interval = setInterval(action, 100);
+}
+
+function stopHold(){
+  clearInterval(interval);
+}
+
+const plusBtn = document.querySelector(".personality-health__container-right")
+plusBtn.addEventListener("mousedown", () => startHold(addHealth))
+plusBtn.addEventListener("mouseup", stopHold)
+plusBtn.addEventListener("mouseleave", stopHold)
+plusBtn.addEventListener("touchstart", () => startHold(addHealth))
+plusBtn.addEventListener("touchend", stopHold)
+
+const minusBtn = document.querySelector(".personality-health__container-left")
+minusBtn.addEventListener("mousedown", () => startHold(removeHealth))
+minusBtn.addEventListener("mouseup", stopHold)
+minusBtn.addEventListener("mouseleave", stopHold)
+minusBtn.addEventListener("touchstart", () => startHold(removeHealth))
+minusBtn.addEventListener("touchend", stopHold)
+
+const plusBtnHealt = document.querySelector(".personality-healthy__container-right")
+plusBtnHealt.addEventListener("mousedown", () => startHold(addHealthy))
+plusBtnHealt.addEventListener("mouseup", stopHold)
+plusBtnHealt.addEventListener("mouseleave", stopHold)
+plusBtnHealt.addEventListener("touchstart", () => startHold(addHealthy))
+plusBtnHealt.addEventListener("touchend", stopHold)
+
+const minusBtnHealt = document.querySelector(".personality-healthy__container-left")
+minusBtnHealt.addEventListener("mousedown", () => startHold(removeHealthy))
+minusBtnHealt.addEventListener("mouseup", stopHold)
+minusBtnHealt.addEventListener("mouseleave", stopHold)
+minusBtnHealt.addEventListener("touchstart", () => startHold(removeHealthy))
+minusBtnHealt.addEventListener("touchend", stopHold)
+
+document.querySelector('.personality-healthy__healt').addEventListener('click',()=>{
+    document.querySelector('#healthy').value = document.querySelector('#health').value
+    healthyAdd = Number(document.querySelector('#health').value)
+    colorHealthy()
+})
