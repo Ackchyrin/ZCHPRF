@@ -163,6 +163,7 @@ function loadFile(){
     const fileInput = document.getElementById('fileInput')
     const file = fileInput.files[0]
     document.getElementById('fileName').innerText = file.name
+    document.getElementById('fileName').style.display = 'block'
     const reader = new FileReader()
     reader.onload = function(event){
         const jsonData = JSON.parse(event.target.result)

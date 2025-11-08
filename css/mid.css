@@ -326,6 +326,14 @@
     font-size: 18px;
 }
 
+.skills-item__title svg path{
+    transition: .4s;
+}
+
+.skills-item__title svg:hover path{
+    fill: lightgreen;
+}
+
 .skills-item__square{
     display: flex;
     align-items: center;
@@ -343,32 +351,32 @@
 }
 
 .skills-item__square-main.eight{
-    background-color: rgba(100, 40, 160, 1);
+    background-color: rgba(65, 110, 140, 1);
     border-radius: 0 5px 5px 0;
 }
 
 .skills-item__square-main.two{
-    background: rgba(120, 160, 210, 1);
+    background-color: rgba(120, 100, 185, 1);
 }
 
 .skills-item__square-main.seven{
-    background: rgba(120, 160, 210, 1);
+    background-color: rgba(30, 180, 120, 1);
 }
 
 .skills-item__square-main.tree{
-    background: rgba(50, 220, 190, 1);
+    background-color: rgba(120, 160, 210, 1);
 }
 
 .skills-item__square-main.six{
-    background: rgba(50, 220, 190, 1);
+    background-color: rgba(40, 200, 150, 1);
 }
 
 .skills-item__square-main.phour{
-    background: rgba(30, 180, 120, 1);
+    background-color: rgba(85, 190, 200, 1);
 }
 
 .skills-item__square-main.five{
-    background: rgba(30, 180, 120, 1);
+    background-color: rgba(50, 220, 190, 1);
 }
 
 .skills-item__square-main.one div{
@@ -608,47 +616,46 @@
 }
 
 .specifications-item__square-main.one{
-    background-color: rgba(100, 40, 160, 1);
+    background-color: rgba(255, 0, 150, 1);
     border-radius: 5px 0 0 5px;
 }
 
 .specifications-item__square-main.ten{
-    background-color: rgba(100, 40, 160, 1);
+    background-color: rgba(255, 0, 200, 1);
     border-radius: 0 5px 5px 0;
 }
 
 .specifications-item__square-main.two{
-    background: rgba(120, 160, 210, 1);
+    background-color: rgba(255, 80, 120, 1);
 }
 
 .specifications-item__square-main.nine{
-    background: rgba(120, 160, 210, 1);
+    background-color: rgba(200, 0, 255, 1);
 }
 
 .specifications-item__square-main.tree{
-    background: rgba(50, 220, 190, 1);
+    background-color: rgba(255, 120, 60, 1);
 }
 
 .specifications-item__square-main.eight{
-    background: rgba(50, 220, 190, 1);
+    background-color: rgba(100, 0, 255, 1);
 }
 
 .specifications-item__square-main.phour{
-    background: rgba(30, 180, 120, 1);
+    background-color: rgba(255, 180, 0, 1);
 }
 
 .specifications-item__square-main.seven{
-    background: rgba(30, 180, 120, 1);
+    background-color: rgba(0, 150, 255, 1);
 }
 
 .specifications-item__square-main.five{
-    background: rgba(40, 30, 100, 1);
+    background-color: rgba(180, 200, 0, 1);
 }
 
 .specifications-item__square-main.six{
-    background: rgba(40, 30, 100, 1);
+    background-color: rgba(0, 200, 180, 1);
 }
-
 
 .specifications-item__square-main.one div{
     border-radius: 3px 0 0 3px;

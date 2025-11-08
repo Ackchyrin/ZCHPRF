@@ -37,16 +37,26 @@ document.querySelectorAll('.specifications-item').forEach(el=>{
                             el.querySelector('.specifications-item__square span').innerText = Number(el.querySelector('.specifications-item__square span').innerText)+1
                         }
                         el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(el.querySelector('.specifications-item__numbers-input').value)/Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"    
-                        if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
-                            el.querySelector('.specifications-item__square span').style.color = 'rgba(100, 40, 160, 1)'
-                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
-                            el.querySelector('.specifications-item__square span').style.color = 'rgba(120, 160, 210, 1)'
-                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
-                            el.querySelector('.specifications-item__square span').style.color = 'rgba(50, 220, 190, 1)'
-                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
-                            el.querySelector('.specifications-item__square span').style.color = 'rgba(30, 180, 120, 1)'
-                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five') || el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
-                            el.querySelector('.specifications-item__square span').style.color = 'rgba(40, 30, 100, 1)'
+                        if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one')){
+                            el.querySelector('advantage').style.color = 'rgba(255, 0, 150, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two')){
+                            el.querySelector('advantage').style.color = 'rgba(255, 80, 120, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree')){
+                            el.querySelector('advantage').style.color = 'rgba(255, 120, 60, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour')){
+                            el.querySelector('advantage').style.color = 'rgba(255, 180, 0, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
+                            el.querySelector('advantage').style.color = 'rgba(180, 200, 0, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+                            el.querySelector('advantage').style.color = 'rgba(0, 200, 180, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+                            el.querySelector('advantage').style.color = 'rgba(0, 150, 255, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+                            el.querySelector('advantage').style.color = 'rgba(100, 0, 255, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
+                            el.querySelector('advantage').style.color = 'rgba(200, 0, 255, 1)'
+                        }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
+                            el.querySelector('advantage').style.color = 'rgba(255, 0, 200, 1)'
                         }
                     }
                     setMana()
@@ -86,17 +96,27 @@ function countingspecifications(x){
     }else{
         x.querySelector('.specifications-item__numbers-left').classList.remove('deactive')
     }
-    x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(x.querySelector('.specifications-item__numbers-input').value)/Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"    
-    if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one') || x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
-        x.querySelector('.specifications-item__square span').style.color = 'rgba(100, 40, 160, 1)'
-    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two') || x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
-        x.querySelector('.specifications-item__square span').style.color = 'rgba(120, 160, 210, 1)'
-    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree') || x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
-        x.querySelector('.specifications-item__square span').style.color = 'rgba(50, 220, 190, 1)'
-    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour') || x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
-        x.querySelector('.specifications-item__square span').style.color = 'rgba(30, 180, 120, 1)'
-    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five') || x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
-        x.querySelector('.specifications-item__square span').style.color = 'rgba(40, 30, 100, 1)'
+    x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(x.querySelector('.specifications-item__numbers-input').value)/Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"            
+    if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one')){
+        x.querySelector('advantage').style.color = 'rgba(255, 0, 150, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two')){
+        x.querySelector('advantage').style.color = 'rgba(255, 80, 120, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree')){
+        x.querySelector('advantage').style.color = 'rgba(255, 120, 60, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour')){
+        x.querySelector('advantage').style.color = 'rgba(255, 180, 0, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
+        x.querySelector('advantage').style.color = 'rgba(180, 200, 0, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+        x.querySelector('advantage').style.color = 'rgba(0, 200, 180, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+        x.querySelector('advantage').style.color = 'rgba(0, 150, 255, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+        x.querySelector('advantage').style.color = 'rgba(100, 0, 255, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
+        x.querySelector('advantage').style.color = 'rgba(200, 0, 255, 1)'
+    }else if(x.querySelectorAll('.specifications-item__square-main')[Number(x.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
+        x.querySelector('advantage').style.color = 'rgba(255, 0, 200, 1)'
     }
     calculateSpent()
     setAdvantage()
@@ -120,3 +140,27 @@ document.querySelectorAll('.specifications-item__favourites').forEach(el=>el.add
     el.classList.toggle('active')
     specialJournalSkillsAndSpecifications()
 }))
+
+document.querySelectorAll('.specifications-item').forEach(el => {
+    if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one')){
+        el.querySelector('advantage').style.color = 'rgba(255, 0, 150, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two')){
+        el.querySelector('advantage').style.color = 'rgba(255, 80, 120, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree')){
+        el.querySelector('advantage').style.color = 'rgba(255, 120, 60, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour')){
+        el.querySelector('advantage').style.color = 'rgba(255, 180, 0, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
+        el.querySelector('advantage').style.color = 'rgba(180, 200, 0, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+        el.querySelector('advantage').style.color = 'rgba(0, 200, 180, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+        el.querySelector('advantage').style.color = 'rgba(0, 150, 255, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+        el.querySelector('advantage').style.color = 'rgba(100, 0, 255, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('nine')){
+        el.querySelector('advantage').style.color = 'rgba(200, 0, 255, 1)'
+    }else if(el.querySelectorAll('.specifications-item__square-main')[Number(el.querySelector('.specifications-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('ten')){
+        el.querySelector('advantage').style.color = 'rgba(255, 0, 200, 1)'
+    }
+})

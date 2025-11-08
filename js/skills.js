@@ -37,14 +37,22 @@ document.querySelectorAll('.skills-item').forEach(el=>{
                             el.querySelector('.skills-item__square span').innerText = Number(el.querySelector('.skills-item__square span').innerText)+1
                         }
                         el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(el.querySelector('.skills-item__numbers-input').value)/Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"    
-                        if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one') || el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+                        if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one')){
                             el.querySelector('.skills-item__square span').style.color = 'rgba(100, 40, 160, 1)'
-                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two') || el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two')){
+                            el.querySelector('.skills-item__square span').style.color = 'rgba(120, 100, 185, 1)'
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree')){
                             el.querySelector('.skills-item__square span').style.color = 'rgba(120, 160, 210, 1)'
-                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree') || el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour')){
+                            el.querySelector('.skills-item__square span').style.color = 'rgba(85, 190, 200, 1)'
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
                             el.querySelector('.skills-item__square span').style.color = 'rgba(50, 220, 190, 1)'
-                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour') || el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+                            el.querySelector('.skills-item__square span').style.color = 'rgba(40, 200, 150, 1)'
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
                             el.querySelector('.skills-item__square span').style.color = 'rgba(30, 180, 120, 1)'
+                        }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+                            el.querySelector('.skills-item__square span').style.color = 'rgba(65, 110, 140, 1)'
                         }
                         calculateSpent()
                     }
@@ -82,14 +90,22 @@ function countingSkills(x){
         x.querySelector('.skills-item__numbers-left').classList.remove('deactive')
     }
     x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].querySelector('div').style.width = 100 - (Number(x.querySelector('.skills-item__numbers-input').value)/Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, '')))*100 + "%"    
-    if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one') || x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+    if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one')){
         x.querySelector('.skills-item__square span').style.color = 'rgba(100, 40, 160, 1)'
-    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two') || x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two')){
+        x.querySelector('.skills-item__square span').style.color = 'rgba(120, 100, 185, 1)'
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree')){
         x.querySelector('.skills-item__square span').style.color = 'rgba(120, 160, 210, 1)'
-    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree') || x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour')){
+        x.querySelector('.skills-item__square span').style.color = 'rgba(85, 190, 200, 1)'
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
         x.querySelector('.skills-item__square span').style.color = 'rgba(50, 220, 190, 1)'
-    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour') || x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+        x.querySelector('.skills-item__square span').style.color = 'rgba(40, 200, 150, 1)'
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
         x.querySelector('.skills-item__square span').style.color = 'rgba(30, 180, 120, 1)'
+    }else if(x.querySelectorAll('.skills-item__square-main')[Number(x.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+        x.querySelector('.skills-item__square span').style.color = 'rgba(65, 110, 140, 1)'
     }
     calculateSpent()
     document.querySelectorAll('.skills-item__favourites').forEach(el=>{
@@ -103,3 +119,23 @@ document.querySelectorAll('.skills-item__favourites').forEach(el=>el.addEventLis
     el.classList.toggle('active')
     specialJournalSkillsAndSpecifications()
 }))
+
+document.querySelectorAll('.skills-item').forEach(el => {
+    if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('one')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(100, 40, 160, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('two')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(120, 100, 185, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('tree')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(120, 160, 210, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('phour')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(85, 190, 200, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('five')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(50, 220, 190, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('six')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(40, 200, 150, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('seven')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(30, 180, 120, 1)'
+    }else if(el.querySelectorAll('.skills-item__square-main')[Number(el.querySelector('.skills-item__numbers-divider').innerText.replace(/^\/|\/$/g, ''))-1].classList.contains('eight')){
+        el.querySelector('.skills-item__square span').style.color = 'rgba(65, 110, 140, 1)'
+    }
+})
