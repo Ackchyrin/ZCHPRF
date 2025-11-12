@@ -3,6 +3,12 @@ function hiddenSystem(){
     let isCollapsed = div.dataset.collapsed === "true"
     let startHeight = isCollapsed ? 60 : div.scrollHeight
     let endHeight = isCollapsed ? div.scrollHeight : 60
+    let moreHeight = 15
+    if(isCollapsed){
+        moreHeight = 15
+    }else{
+        moreHeight = 0
+    }
     let startTime
     if(isCollapsed){
         document.querySelector('.system-info__hidden').innerText = 'Скрыть'
@@ -14,7 +20,7 @@ function hiddenSystem(){
         if(!startTime) startTime = timestamp
         let progress = (timestamp - startTime) / 400
         if(progress > 1) progress = 1
-        div.style.height = startHeight + (endHeight - startHeight) * progress + "px"
+        div.style.height = startHeight + (endHeight - startHeight) * progress + moreHeight + "px"
         if(progress < 1){
             requestAnimationFrame(animate)
         }else{

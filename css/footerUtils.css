@@ -35,6 +35,7 @@
     display: none;
     max-width: 400px;
     width: fit-content;
+    z-index: 2;
 }
 
 .hints.hiden{

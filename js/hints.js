@@ -210,3 +210,12 @@ function addHintsDiary(){
         el.addEventListener('mouseenter',setHint(el,'Свернуть/Развернуть в минималистичный вид.'))
     })
 }
+
+document.querySelector('.system-master').addEventListener('mouseenter',setHint(document.querySelector('.system-master'),'Показать помощника заполнения персонажа по шагам.'))
+document.querySelector('.master').addEventListener('mouseenter',setHint(document.querySelector('.master'),'Помощник заполнения персонажа по шагам.'))
+document.querySelector('.personality-health').addEventListener('mouseenter',setHint(document.querySelector('.personality-health'),'Показывает ваше здоровье.'))
+document.querySelector('.personality-healthy').addEventListener('mouseenter',setHint(document.querySelector('.personality-healthy'),'Показывает ваше текущее здоровье.'))
+document.querySelector('.personality-armor').addEventListener('mouseenter',setHint(document.querySelector('.personality-armor'),'Показывает вашу базовую броню.'))
+document.querySelector('.personality-evasion').addEventListener('mouseenter',setHint(document.querySelector('.personality-evasion'),'Показывает ваше текущее дополнительное уклонение.'))
+document.querySelector('.personality-initiative').addEventListener('mouseenter',setHint(document.querySelector('.personality-initiative'),'Показывает вашу иницативу.'))
+document.querySelector('.special-mana__button.restore').addEventListener('mouseenter',setHint(document.querySelector('.special-mana__button.restore'),'Восстанавливает всю вашу ману.'))

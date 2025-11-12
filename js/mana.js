@@ -19,6 +19,13 @@ function colMana(){
     document.querySelector('.special-mana__col span').innerText =  i+'/'+document.querySelectorAll('.special-mana__container svg').length
 }
 
+function restoreMana(){
+    document.querySelectorAll('.special-mana__container svg').forEach(element => {
+        element.classList.add('active')
+    })
+    colMana()
+}
+
 function manaPaint(element){
     const svgs = document.querySelectorAll('.special-mana__container svg')
     let paint = true

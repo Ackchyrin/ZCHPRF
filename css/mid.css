@@ -285,15 +285,27 @@
     transition: .4s;
 }
 
+.special-mana__button svg polygon{
+    transition: .4s;
+}
+
 .special-mana__button:hover svg line{
     stroke: white;
+}
+
+.special-mana__button.restore:hover{
+    background-color: white;
+}
+
+.special-mana__button.restore:hover svg polygon{
+    fill: black;
 }
 
 .special-mana__col{
     display: flex;
     gap: 5px;
     font-size: 18px;
-    width: 300px;
+    width: 335px;
 }
 
 .skills{
