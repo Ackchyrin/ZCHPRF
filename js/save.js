@@ -233,7 +233,7 @@ function loadFile(){
         document.querySelectorAll('.skills-item__square span').forEach(el=>el.style.color = 'black')
         document.querySelectorAll('.skills-item__numbers-divider').forEach(el=>el.innerText = '/' + 1)
         document.querySelectorAll('.skills-item__square-main div').forEach(el=>el.style.width = 100+"%")
-        document.querySelectorAll('.skills-item__numbers-left').forEach(el=>el.classList.add('deactive'))        
+        document.querySelectorAll('.skills-item__numbers-left').forEach(el=>el.classList.add('deactive'))
         Object.entries(jsonData['skills']).forEach(([key, val]) =>{        
             if(val.favorites){
                 document.querySelector(`label[for="${key}"] .skills-item__favourites`).classList.add('active')
@@ -598,6 +598,11 @@ function loadFile(){
                     modal.innerText = ''
                 }, 500)
             }, 2000)
+        }
+        if(document.querySelector('#character') != ""){
+            document.title =  "ЗЧВПРФ" + " - " + document.querySelector('#character').value
+        }else{
+            document.title =  "ЗЧВПРФ"
         }
     }, 2000)
     reader.readAsText(file)

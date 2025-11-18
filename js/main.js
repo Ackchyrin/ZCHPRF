@@ -147,3 +147,20 @@ function openListInventory(x){
 function openButtonRight(){
     document.querySelectorAll('.right-container__button.deactive').forEach(el=>el.classList.remove('deactive'))
 }
+
+document.querySelector('#character').addEventListener('input',()=>{
+    if(document.querySelector('#character') != ""){
+        document.title =  "ЗЧВПРФ" + " - " + document.querySelector('#character').value
+    }else{
+        document.title =  "ЗЧВПРФ"
+    }
+})
+
+document.querySelector('#character').addEventListener('propertychange',()=>{
+    if(document.querySelector('#character') != ""){
+        document.title =  "ЗЧВПРФ" + " - " + document.querySelector('#character').value
+    }else{
+        document.title =  "ЗЧВПРФ"
+    }
+})
+
