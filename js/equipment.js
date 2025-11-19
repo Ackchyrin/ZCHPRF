@@ -68,6 +68,7 @@ function addBonus(x){
         activeCheckbox(element)
         addHintsBonusEquipment()
         editMoreSkillsName()
+        editMoreSprecificationName()
     })
 }
 
@@ -429,6 +430,7 @@ function setBonusAll(x){
         setSpentInventory()
         setHealthAll()
         editMoreSkillsName()
+        editMoreSprecificationName()
     }
 }
 

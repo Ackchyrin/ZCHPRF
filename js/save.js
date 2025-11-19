@@ -5,6 +5,7 @@ dataCharacter['spell'] = {}
 dataCharacter['equipment'] = {}
 dataCharacter['diary'] = {}
 dataCharacter['skillsName'] = {}
+dataCharacter['specificationName'] = {}
 
 document.getElementById('fileInput').addEventListener('change', loadFile)
 
@@ -127,6 +128,9 @@ function saveFile(){
     document.querySelectorAll('.skills-item').forEach(el=>{
         dataCharacter['skillsName'][el.getAttribute('for')] = el.querySelector('.skills-item__title-text').innerHTML
     })
+    document.querySelectorAll('.specifications-item').forEach(el=>{
+        dataCharacter['specificationName'][el.getAttribute('for')] = el.querySelector('.specifications-item__title').innerHTML
+    })
     currentdate = new Date()
     day = currentdate.getDate()
     month = currentdate.getMonth() + 1
@@ -228,6 +232,10 @@ function loadFile(){
             document.querySelector('.skills-item[for="'+key+'"]').querySelector('.skills-item__title-text').innerHTML = val
         })
         editMoreSkillsName()
+        Object.entries(jsonData['specificationName']).forEach(([key, val]) =>{
+            document.querySelector('.specifications-item[for="'+key+'"]').querySelector('.specifications-item__title').innerHTML = val
+        })
+        editMoreSprecificationName()
         document.querySelectorAll('.skills-item__numbers-input').forEach(el=>el.value = '')
         document.querySelectorAll('.skills-item__square span').forEach(el=>el.innerText = 0)
         document.querySelectorAll('.skills-item__square span').forEach(el=>el.style.color = 'black')
@@ -465,6 +473,7 @@ function loadFile(){
                         </div>
                     `)
                     editMoreSkillsName()
+                    editMoreSprecificationName()
                     document.querySelectorAll('.number-only').forEach(input =>{
                         input.addEventListener('input', function(){
                             this.value = this.value.replace(/[^0-9-]/g, '')
