@@ -164,3 +164,10 @@ document.querySelector('#character').addEventListener('propertychange',()=>{
     }
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector(".footer__data-date");
+    if (!el) return;
+
+    const year = new Date().getFullYear();
+    el.textContent = "@" + year;
+});

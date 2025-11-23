@@ -37,6 +37,7 @@ function takeshot(){
     document.querySelector('.personality-evasion').classList.add('takeShot')
     document.querySelector('.personality-initiative').classList.add('takeShot')
     document.querySelectorAll('.special-mana__button').forEach(el=>el.classList.add('deactive'))
+    document.querySelectorAll('.mid-info__item span').forEach(el=>el.style.display = 'none')
     document.querySelectorAll('.mid-character').forEach(el=>{
         el.querySelector('div').style.display = 'block'
         el.querySelector('.mid-character__text').style.display = 'none'
@@ -125,6 +126,7 @@ function download(canvas, filename) {
     document.querySelector('.personality-evasion').classList.remove('takeShot')
     document.querySelector('.personality-initiative').classList.remove('takeShot')
     document.querySelectorAll('.special-mana__button').forEach(el=>el.classList.remove('deactive'))
+        document.querySelectorAll('.mid-info__item span').forEach(el=>el.style.display = 'block')
     document.querySelectorAll('.mid-character').forEach(el=>{
         el.querySelector('div').style.display = 'none'
         el.querySelector('.mid-character__text').style.display = 'block'
