@@ -10,7 +10,7 @@ body{
     padding: 10px;
     display: flex;
     gap: 10px;
-    background-image: url(../randomizer/image/backroundWinter.jpg);
+    background-image: url(../image/backroundWinter.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     max-width: 1920px;
