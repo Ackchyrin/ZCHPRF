@@ -26,7 +26,6 @@
 }
 
 .system-info__hidden{
-    cursor: pointer;
     border: 1px solid;
     border-radius: 10px;
     cursor: pointer;

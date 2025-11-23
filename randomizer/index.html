@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920">
     <title>ЗЧПРФ - рандомайзер</title>
+    <link rel="stylesheet" href="./fonts/style.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/randomizer.css">
+    <link rel="stylesheet" href="./css/group.css">
+    <link rel="icon" href="./image/favicon.png" type="image/x-icon">
 </head>
 <body>
-    
+    <div class="randomizer">
+        <label for="race">
+            Раса:
+            <input id="race">
+            <div class="select"></div>
+        </label>
+        <label for="archetype">
+            Архетип:
+            <input id="archetype">
+            <div class="select"></div>
+        </label>
+        <label for="group">
+            Группа:
+            <input id="group">
+            <div class="select"></div>
+        </label>
+        <div class="randomizer-button" onclick="createCharacter()">
+            Создать персонажа
+        </div>
+    </div>
+    <div class="group">
+        <div class="group-top">
+            <div class="group-top__title">Группы</div>
+            <div class="group-top__button" onclick="addGroup()">Добавить группу</div>
+        </div>
+        <div class="group-overflow"></div>
+    </div>
+    <script defer src="./js/getTable.js"></script>
+    <script defer src="./js/group.js"></script>
+    <script defer src="./js/createCharacther.js"></script>
 </body>
 </html>

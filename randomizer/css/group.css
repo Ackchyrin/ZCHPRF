@@ -1,0 +1,100 @@
+.group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    padding: 10px;
+    border: 1px solid;
+    max-width: 350px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.group-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.group-top__button{
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .4s;
+}
+
+.group-top__button:hover{
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.group-overflow{
+    overflow-y: auto;
+    max-height: 90vh;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.group-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.group-item__input{
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    font-size: 18px;
+    font-family: 'Segoe Script';
+    max-width: 220px;
+}
+
+.group-item__input:focus{
+    border-bottom: 1px solid;
+}
+.group-item__button{
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .4s;
+}
+
+.group-item__button:hover{
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.group-item__list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: .4s;
+    transform-origin: top;
+    transform: scaleY(0);
+    max-height: 0;
+}
+
+.group-item__list.active{
+    transform: scaleY(1);
+    max-height: 100%;
+    margin-top: 20px;
+}
+
+.group-item__list-char{
+    cursor: pointer;
+    transition: .4s;
+}
+
+.group-item__list-char:hover{
+    opacity: .7;
+}
+
+.group-item__list-char.active{
+    color: red;
+}
