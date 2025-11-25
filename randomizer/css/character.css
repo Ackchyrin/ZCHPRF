@@ -1,0 +1,110 @@
+.character{
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    padding: 20px;
+    border: 1px solid;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 550px;
+}
+
+.character:active {
+    cursor: grabbing;
+}
+
+.character-fio,
+.character-sdescription,
+.character-health,
+.character-healthy,
+.character-damage,
+.character-armor,
+.character-avoidance,
+.character-mana,
+.character-initiative{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: calc((523px / 3) - 15px);
+    width: 100%;
+}
+
+.character label .character-block{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.character label .character-block input{
+    outline: none;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.character label .character-block div{
+    display: flex;
+}
+
+.character-skills,
+.character-specifications{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.character-skills__title,
+.character-specifications__title{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+
+.character-skills__title div,
+.character-specifications__title div{
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    transition: .4s;
+    text-align: center;
+}
+
+.character-skills__title div:hover,
+.character-specifications__title div:hover{
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.character-skills__item,
+.character-specifications__item{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 119.5px;
+}
+
+.character-skills__item-block,
+.character-specifications__item-block{
+    display: flex;
+    gap: 5px;
+}
+
+.skills-item__block-input,
+.specifications-item__block-input{
+    outline: none;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: 60px;
+}

@@ -15,6 +15,7 @@
 .randomizer label{
     position: relative;
     display: flex;
+    cursor: pointer;
 }
 
 .randomizer label input{
